@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:35:34 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/06 18:04:20 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 18:03:45 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,11 @@ Karen::~Karen(void) {
 **
 */
 
-void	Karen::complain(std::string level) {
+void	Karen::complain(int lvl) {
 
-	static std::string	check_index[NB_LVL] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	static 	ft_karen 	f[NB_LVL] = { &Karen::_debug, &Karen::_info, &Karen::_warning, &Karen::_error};
 	
-	for (int i = 0; i < NB_LVL; i++)
-	{
-		if (level.compare(check_index[i]) == 0)
-		{
-			(this->*f[i])();
-			return ;
-		}	
-	}
-	std::cout << '"' << level << '"' << " is not an error" << std::endl;
+	(this->*f[lvl])();
 }
 
 
