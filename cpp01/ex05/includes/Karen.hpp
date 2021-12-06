@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:35:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/05 14:41:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 16:15:37 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define KAREN_HPP
 
 # include <string>
+# define NB_LVL	4
 
 class	Karen {
 
@@ -23,6 +24,7 @@ class	Karen {
 	~Karen(void);
 
 		void	complain(std::string level);
+		typedef		void	(Karen::*ft_karen)(void) ;
 
 	private : 
 
@@ -32,7 +34,7 @@ class	Karen {
 		void	_warning(void);
 		void	_error(void);
 
+};
 
-}
 
 #endif

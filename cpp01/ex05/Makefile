@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/06 14:20:59 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/06 16:25:31 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,15 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME =		zombie
+NAME =		karen
 
 
 INC_DIR	=	includes
-INCLUDE	=	Zombie.hpp
+INCLUDE	=	Karen.hpp
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
 SRC_DIR	=	srcs
-SRC		= 	Zombie.cpp newZombie.cpp main.cpp randomChump.cpp
+SRC		= 	main.cpp Karen.cpp
 
 OBJ_DIR =	obj/
 OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
@@ -33,7 +33,7 @@ OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 
 CC 		=	c++
 
-CFLAG 	= 	-Wall -Wextra  -std=c++98 -pedantic
+CFLAG 	= 	-Wall -Wextra -std=c++98 -pedantic
 IFLAG 	=	$(foreach dir, $(INC_DIR), -I $(dir)/ )
 
 
@@ -54,6 +54,8 @@ $(NAME):	$(OBJ)
 			@echo "\033[32mC\n*     Compilation $(NAME)     *\t   \033[32;1m--> Complete\033[0m"
 
 all:		$(NAME)
+
+bonus : 	all
 
 show :
 			@echo "SRC_DIR : $(SRC_DIR)\n"
