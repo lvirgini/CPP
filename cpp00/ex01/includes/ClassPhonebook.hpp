@@ -6,16 +6,16 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:19:07 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 14:12:04 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:44:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLASS_PHONEBOOK_HPP
 # define CLASS_PHONEBOOK_HPP
 
-# define MAX_CONTACT	8
-
 # include "ClassContact.hpp"
+
+# define MAX_CONTACT	8
 
 class	Phonebook {
 
@@ -35,7 +35,6 @@ class	Phonebook {
 		Contact 	_list_contact[MAX_CONTACT];
 
 		void	_add_nb_contact(void);
-		void	_swap_contact(void);
 		bool	_is_full(void) const ;
 };
 

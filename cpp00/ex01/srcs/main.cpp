@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:16:54 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 14:26:24 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:46:13 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "ClassPhonebook.hpp"
 #include <string>
 #include <iostream>
+#include <iomanip>
+
 
 static void	display_functionality(void) {
 
@@ -34,8 +36,10 @@ static void	search(Phonebook phonebook) {
 	{
 		std::cout << "Enter index for seeing a full contact : ";
 		std::cin >> index;
-		if (phonebook.display_this_contact(index) == false)
+		if ( std::cin.fail() || phonebook.display_this_contact(index - 1) == false)
 			std::cout << "this is not a correct index" << std::endl;
+		std::cin.clear();
+		std::cin.ignore();
 	}
 }
 
@@ -46,7 +50,7 @@ int		main(void) {
 
 	std::cout << "Welcome to your Phonebook !" << std::endl;
 	display_functionality();
-	while (std::cin >> line)
+	while (std::getline(std::cin, line))
 	{
 		if (line.compare("ADD") == 0)
 			phonebook.add_new_contact();

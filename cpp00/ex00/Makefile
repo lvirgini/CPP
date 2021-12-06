@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/01 16:40:47 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/06 13:35:29 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 #	 COMPILATION	#
 # ----------------- #
 
-CC 		=	clang++
+CC 		=	c++
 
 CFLAG 	= 	-Wall -Wextra -Werror
 
@@ -44,20 +44,6 @@ $(NAME):	$(OBJ)
 
 all:		$(NAME)
 
-bonus : 	all
-
-show :
-			@echo "SRC_DIR : $(SRC_DIR)\n"
-			@echo "LIB_DIR : $(LIB_DIR)\n"
-			@echo "INC_DIR : $(INC_DIR)\n"
-			@echo "CFLAG : $(CFLAG)\n"
-			@echo "IFLAG : $(IFLAG)\n"
-			@echo "LFLAG : $(LFLAG)\n"
-			@echo "HEADERS : $(foreach file, $(HEADERS),\n\t$(file))\n"
-			@echo "SRC :$(foreach file, $(SRC_MINISHELL),\n\t$(file))\n"
-			@echo "OBJ :$(foreach file, $(OBJ_MINISHELL),\n\t$(file))\n"
-
-
 # ----------------- #
 # 		CLEAN		#
 # ----------------- #
@@ -70,4 +56,4 @@ fclean: clean
 
 re: 	fclean all
 
-.PHONY: all clean flcean re show bonus
+.PHONY: all clean flcean re

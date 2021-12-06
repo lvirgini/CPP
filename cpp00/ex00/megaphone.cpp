@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 15:46:07 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/02 12:07:58 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:36:07 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		main(int ac, char **av)
 	if (ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
-	{}
 		ft_megaphone(av);
 	std::cout << std::endl;
 	return (0);

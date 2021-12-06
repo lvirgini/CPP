@@ -6,12 +6,12 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:15:42 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 14:12:25 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:43:29 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClassPhonebook.hpp"
-# include "ClassContact.hpp"
+#include "ClassContact.hpp"
 #include <iostream>
 
 /*
@@ -35,9 +35,12 @@ Phonebook::~Phonebook(void) {
 void	Phonebook::add_new_contact(void) {
 
 	if (this->_is_full())
-		this->_swap_contact();
-	this->_list_contact[this->get_nb_contact()].setup_contact();
-	this->_add_nb_contact();
+		this->_list_contact[MAX_CONTACT - 1].setup_contact();
+	else
+	{
+		this->_list_contact[this->get_nb_contact()].setup_contact();
+		this->_add_nb_contact();
+	}	
 }
 
 /*
@@ -56,20 +59,10 @@ void	Phonebook::display_complete_phonebook(void) const {
 
 bool	Phonebook::display_this_contact(int index) const {
 
-	if (index < 0 && index >= this->_nb_contact)
+	if (index < 0 || index >= this->_nb_contact)
 		return (false);
 	this->_list_contact[index].display_contact();
 	return (true);
-}
-
-/*
-** swap all contact and ecrase first element data.
-*/
-
-void	Phonebook::_swap_contact(void) {
-	
-	for (int i = 0; (i + 1) < MAX_CONTACT; i++)
-		std::swap(this->_list_contact[i], this->_list_contact[i + 1]);
 }
 
 /*
@@ -96,9 +89,9 @@ int		Phonebook::get_nb_contact(void) const {
 
 bool	Phonebook::_is_full(void) const {
 
-	if (this->_nb_contact == MAX_CONTACT)
-		return (true);
-	return (false);
+	if (this->_nb_contact < MAX_CONTACT)
+		return (false);
+	return (true);
 }
 
 int	Phonebook::_nb_contact = 0;

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 12:25:52 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 13:39:09 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:43:54 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class	Contact {
 		void		setup_contact(void) ;
 		void		display_contact(void) const ;
 		void		display_tab_contact(int index) const ;
-
 
 	private:
 
