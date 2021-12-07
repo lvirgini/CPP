@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:35:46 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/06 18:05:26 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 10:27:10 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@ static void	switch_karen_message(int lvl) {
 
 	switch (lvl) {
 
-			case K_DEBUG: k.complain(K_DEBUG);
-			case K_INFO: k.complain(K_INFO);
-			case K_WARNING: k.complain(K_WARNING);
-			case K_ERROR: k.complain(K_ERROR);
-
+			case K_DEBUG: 
+				k.complain(K_DEBUG);
+			case K_INFO:
+				k.complain(K_INFO);
+			case K_WARNING: 
+				k.complain(K_WARNING);
+			case K_ERROR: 
+				k.complain(K_ERROR);
+				break;
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 
 }
@@ -46,7 +52,7 @@ int	main(int ac, char **av) {
 
 	if (ac != 2)
 	{
-		std::cerr << "Usage : ./karen-filter <tstring_level>" << std::endl;
+		std::cerr << "Usage : ./karen-filter <level>" << std::endl;
 		return (1);
 	}
 	lvl = find_level(av[1]);

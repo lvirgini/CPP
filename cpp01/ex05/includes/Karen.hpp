@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:35:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/06 16:15:37 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 10:41:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define KAREN_HPP
 
 # include <string>
+
 # define NB_LVL	4
 
 class	Karen {
@@ -35,6 +36,5 @@ class	Karen {
 		void	_error(void);
 
 };
-
 
 #endif

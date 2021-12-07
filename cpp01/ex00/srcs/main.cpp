@@ -6,15 +6,12 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 20:08:38 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 21:46:30 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 10:31:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
-
-/*
-*/
 
 int main(void)
 {

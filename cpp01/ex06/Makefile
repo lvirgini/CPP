@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/06 16:25:31 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/07 10:41:39 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME =		karen
+NAME =		karen-filter
 
 
 INC_DIR	=	includes
@@ -33,7 +33,7 @@ OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 
 CC 		=	c++
 
-CFLAG 	= 	-Wall -Wextra -std=c++98 -pedantic
+CFLAG 	= 	-Wall -Wextra -Werror -std=c++98 -pedantic
 IFLAG 	=	$(foreach dir, $(INC_DIR), -I $(dir)/ )
 
 
