@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:35:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/07 10:09:05 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 22:07:19 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ class	Karen {
 		Karen(void);
 		~Karen(void);
 
-		typedef	void (Karen::*ft_karen)(void);
-		
 		void	complain(int lvl);
 
 	private : 
+	
+		typedef	void (Karen::*ft_karen)(void);
 
 		void	_debug(void);
 		void	_info(void);

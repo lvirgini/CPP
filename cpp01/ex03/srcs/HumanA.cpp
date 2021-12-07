@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 23:27:50 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 23:43:06 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 22:38:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ HumanA::~HumanA(void) {
 **
 */
 
-void	HumanA::attack(void) {
+void	HumanA::attack(void) const {
 
-	std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with " << this->_weapon.getType() << std::endl;
 }

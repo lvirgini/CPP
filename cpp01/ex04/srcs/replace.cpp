@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 12:21:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/07 10:36:39 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 22:01:27 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,20 @@ static bool	copy_in_new_file(std::string s1, std::string s2, std::ifstream &file
 	return (SUCCESS);
 }
 
-
 bool	replace_string_in_file(char **argv)
 {
 	std::string		s1 = argv[2];
 	std::string		s2 = argv[3];
 	std::string		filename = argv[1];
-	std::ifstream	file(argv[1]);
+	std::ifstream	file;
 
 	if (s1.empty())
 		return (display_error(ERR_EMPTY));
-	if (!file)
-		return (display_error(ERR_NOT_FILE));
+	file.open(argv[1], std::fstream::in);
+	if (file.fail())
+		return (display_error(ERR_NOT_FILE));	
+	if (file.peek() == EOF)
+		return (display_error(ERR_EMPTY_FILE));
 	if (copy_in_new_file(s1, s2, file, filename) == FAILURE)
 	{
 		file.close();

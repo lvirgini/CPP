@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:35:46 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/07 10:27:10 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 22:14:43 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,21 @@ static void	switch_karen_message(int lvl) {
 
 	switch (lvl) {
 
-			case K_DEBUG: 
-				k.complain(K_DEBUG);
-			case K_INFO:
-				k.complain(K_INFO);
-			case K_WARNING: 
-				k.complain(K_WARNING);
-			case K_ERROR: 
-				k.complain(K_ERROR);
-				break;
-			default:
-				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		case K_DEBUG: 
+			k.complain(K_DEBUG);
+			__attribute__ ((fallthrough));
+		case K_INFO:
+			k.complain(K_INFO);
+			__attribute__ ((fallthrough));
+		case K_WARNING: 
+			k.complain(K_WARNING);
+			__attribute__ ((fallthrough));
+		case K_ERROR: 
+			k.complain(K_ERROR);
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
-
 }
 
 static int	find_level(std::string str) {

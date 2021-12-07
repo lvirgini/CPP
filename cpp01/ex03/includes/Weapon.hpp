@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 23:04:39 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/04 23:41:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:42:45 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ class	Weapon {
 
 	public:
 
-		Weapon(void);
 		Weapon(std::string type);
 		~Weapon(void);
 
-		std::string		getType(void);
+		std::string		getType(void) const ;
 		void			setType(std::string type);
 
 	private:
