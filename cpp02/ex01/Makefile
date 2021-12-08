@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/06 16:25:31 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/08 10:42:13 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,14 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME =		karen
-
+NAME =		fixed
 
 INC_DIR	=	includes
-INCLUDE	=	Karen.hpp
+INCLUDE	=	Fixed.hpp
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
 SRC_DIR	=	srcs
-SRC		= 	main.cpp Karen.cpp
+SRC		= 	main.cpp Fixed.cpp
 
 OBJ_DIR =	obj/
 OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
@@ -55,20 +54,6 @@ $(NAME):	$(OBJ)
 
 all:		$(NAME)
 
-bonus : 	all
-
-show :
-			@echo "SRC_DIR : $(SRC_DIR)\n"
-			@echo "LIB_DIR : $(LIB_DIR)\n"
-			@echo "INC_DIR : $(INC_DIR)\n"
-			@echo "CFLAG : $(CFLAG)\n"
-			@echo "IFLAG : $(IFLAG)\n"
-			@echo "LFLAG : $(LFLAG)\n"
-			@echo "HEADERS : $(foreach file, $(HEADERS),\n\t$(file))\n"
-			@echo "SRC :$(foreach file, $(SRC),\n\t$(file))\n"
-			@echo "OBJ :$(foreach file, $(OBJ),\n\t$(file))\n"
-
-
 # ----------------- #
 # 		CLEAN		#
 # ----------------- #
@@ -81,4 +66,4 @@ fclean: clean
 
 re: 	fclean all
 
-.PHONY: all clean flcean re show bonus
+.PHONY: all clean flcean re
