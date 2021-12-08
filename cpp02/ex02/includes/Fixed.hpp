@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:39:58 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/08 18:44:31 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:18:37 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,21 @@ class	Fixed {
 		~Fixed(void);
 
 		Fixed &		operator=(Fixed const & f);
+		Fixed		operator+(Fixed const & f) const;
+	/*	Fixed		operator-(Fixed const & f) const;
+		Fixed		operator*(Fixed const & f) const;
+		Fixed		operator/(Fixed const & f) const;
+
+		Fixed		operator>(Fixed const & f) const;
+		Fixed		operator>=(Fixed const & f) const;
+		Fixed		operator<(Fixed const & f) const;
+		Fixed		operator<=(Fixed const & f) const;
+		Fixed		operator==(Fixed const & f) const;
+		Fixed		operator!=(Fixed const & f) const;*/
+
+		//++i i++ --i i-- par epsilon min max
+
+
 
 		float		toFloat(void) const ;
 		int			toInt(void) const ;

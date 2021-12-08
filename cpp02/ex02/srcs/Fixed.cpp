@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:39:44 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/08 18:44:23 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:31:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,23 @@ Fixed::Fixed (void) : _nb(0) {
 
 Fixed::Fixed (int i) : _nb(i) {
 	this->_nb = i * (1 << this->_width);
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed ( float f) {
 
-	this->_nb = roundf(f * (1 << this->_width));
-	std::cout << "Float constructor called" << std::endl;
+	this->_nb = roundf(f * (float)(1 << this->_width));
+	//std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed( Fixed const & f) {
 
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = f;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -54,11 +54,22 @@ Fixed::~Fixed(void) {
 
 Fixed &	Fixed::operator=(Fixed const & f) {
 
-	std::cout << "Assignation operator called" << std::endl;
-	if (this != &f)
-		this->_nb = f.getRawBits();
+//	std::cout << "Assignation operator called" << std::endl;
+	//if (this != &f)
+	this->_nb = f.getRawBits();
 	return (*this);
 }
+
+Fixed	Fixed::operator+(Fixed const & f) const {
+	
+	Fixed	result;
+	int		raw;
+
+	raw = this->_nb + f.getRawBits();
+	result.setRawBits(raw);
+	return (Fixed(result.toFloat()));
+}
+
 
 std::ostream & operator<<( std::ostream & o, Fixed const & fix){
 
