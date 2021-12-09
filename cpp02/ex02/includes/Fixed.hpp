@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:39:58 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/08 19:18:37 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:22:10 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,35 @@ class	Fixed {
 		Fixed(Fixed const & f) ;
 		~Fixed(void);
 
+/*
+** Operator
+*/
+
 		Fixed &		operator=(Fixed const & f);
 		Fixed		operator+(Fixed const & f) const;
-	/*	Fixed		operator-(Fixed const & f) const;
+		Fixed		operator-(Fixed const & f) const;
 		Fixed		operator*(Fixed const & f) const;
 		Fixed		operator/(Fixed const & f) const;
 
-		Fixed		operator>(Fixed const & f) const;
-		Fixed		operator>=(Fixed const & f) const;
-		Fixed		operator<(Fixed const & f) const;
-		Fixed		operator<=(Fixed const & f) const;
-		Fixed		operator==(Fixed const & f) const;
-		Fixed		operator!=(Fixed const & f) const;*/
+		bool		operator>(Fixed const & f) const;
+		bool		operator>=(Fixed const & f) const;
+		bool		operator<(Fixed const & f) const;
+		bool		operator<=(Fixed const & f) const;
+		bool		operator==(Fixed const & f) const;
+		bool		operator!=(Fixed const & f) const;
 
-		//++i i++ --i i-- par epsilon min max
+/*
+** Increment Decrement
+*/
 
+		Fixed &		operator++(void);
+		Fixed		operator++(int) ;
+		Fixed &		operator--(void);
+		Fixed		operator--(int) ;
 
+/*
+** Functions
+*/
 
 		float		toFloat(void) const ;
 		int			toInt(void) const ;
@@ -48,6 +61,12 @@ class	Fixed {
 		int			getRawBits(void) const ;
 		void 		setRawBits(int const raw);
 		
+		static Fixed const &	min(Fixed const & a, Fixed const &b) ;
+		static Fixed &			min(Fixed & a, Fixed &b) ;
+		static Fixed const &	max(Fixed const & a, Fixed const &b) ;
+		static Fixed &			max(Fixed & a, Fixed &b) ;
+
+
 	private:
 
 		int					_nb;

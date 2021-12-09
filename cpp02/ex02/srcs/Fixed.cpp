@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:39:44 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/08 19:31:53 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:29:05 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 /* -------------------------------------------------------------------------- */
 
 Fixed::Fixed (void) : _nb(0) {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 }
 
 //	FIXED
@@ -67,8 +67,117 @@ Fixed	Fixed::operator+(Fixed const & f) const {
 
 	raw = this->_nb + f.getRawBits();
 	result.setRawBits(raw);
-	return (Fixed(result.toFloat()));
+	return (result);
 }
+
+Fixed	Fixed::operator-(Fixed const & f) const {
+	
+	Fixed	result;
+	int		raw;
+
+	raw = this->_nb - f.getRawBits();
+	result.setRawBits(raw);
+	return (result);
+}
+
+/*
+** Dvision of raw value and right shift by width
+*/
+
+Fixed	Fixed::operator*(Fixed const & f) const {
+	
+	int		raw;
+	Fixed	result;
+
+	raw = (this->_nb * f.getRawBits()) >> this->_width;
+	result.setRawBits(raw);
+	return (result);
+}
+
+/*
+** Dvision of raw value and left shift by width
+*/
+
+Fixed	Fixed::operator/(Fixed const & f) const {
+	
+	Fixed	result;
+	int		raw;
+
+	if (f.getRawBits() == 0)
+		return (result);
+	raw = (this->_nb / f.getRawBits()) * ( 1 << this->_width);
+	result.setRawBits(raw);
+	return (result);
+}
+
+/*
+** comparaison operator 
+*/
+
+bool		Fixed::operator>(Fixed const & f) const {
+
+	return (this->_nb > f.getRawBits());
+}
+
+bool		Fixed::operator>=(Fixed const & f) const {
+
+	return (this->_nb >= f.getRawBits());
+}
+
+bool		Fixed::operator<(Fixed const & f) const {
+
+	return (this->_nb < f.getRawBits());
+}
+
+bool		Fixed::operator<=(Fixed const & f) const {
+
+	return (this->_nb > f.getRawBits());
+}
+
+bool		Fixed::operator==(Fixed const & f) const {
+
+	return (this->_nb == f.getRawBits());
+}
+
+bool		Fixed::operator!=(Fixed const & f) const {
+
+	return (this->_nb != f.getRawBits());
+}
+
+/*
+** Incrementation Decrementation
+*/
+
+
+Fixed &		Fixed::operator++(void) {
+
+	this->_nb++;
+	return (*this);
+}
+
+Fixed		Fixed::operator++(int) {
+	
+	Fixed	res = (*this);
+	this->_nb++;
+	return (res);
+}
+
+Fixed &		Fixed::operator--(void) {
+
+	this->_nb--;
+	return (*this);
+}
+
+Fixed		Fixed::operator--(int) {
+
+	Fixed	res = (*this);
+	this->_nb--;
+	return (res);
+}
+
+
+
+
 
 
 std::ostream & operator<<( std::ostream & o, Fixed const & fix){
@@ -109,4 +218,24 @@ float	Fixed::toFloat(void) const {
 
 int const	Fixed::_width = 8;
 
+
+Fixed const &		Fixed::min(Fixed const & a, Fixed const & b) {
+
+	return (a.getRawBits() < b.getRawBits() ? a : b);
+}
+
+Fixed &		Fixed::min(Fixed & a, Fixed & b) {
+
+	return (a.getRawBits() < b.getRawBits() ? a : b);
+}
+
+Fixed const &		Fixed::max(Fixed const & a, Fixed const & b) {
+
+	return (a.getRawBits() > b.getRawBits() ? a : b);
+}
+
+Fixed &		Fixed::max(Fixed & a, Fixed & b) {
+
+	return (a.getRawBits() > b.getRawBits() ? a : b);
+}
 
