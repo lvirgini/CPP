@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:42:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/09 18:12:28 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/10 22:39:52 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,34 @@ class	ClapTrap {
 		unsigned int	_attack_damage;
 		unsigned int	_energy_point;
 
+
+/* -------------------------------------------------------------------------- */
 	public:
 
-	ClapTrap(std::string name);
-//	ClapTrap(ClapTrap const & tocopy);
-	~ClapTrap(void);
+/* 
+** Constructor Destructor 
+*/
 
+		ClapTrap(std::string name);
+		ClapTrap(ClapTrap const & tocopy);
+		~ClapTrap(void);
 
-	void	attack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+		ClapTrap &	operator=(ClapTrap const & Clap);
+
+/*
+** Functions
+*/
+		void	attack(std::string const & target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+
+/*
+** functions get something
+*/
+		unsigned int	getAttackDamage(void);
+		unsigned int	getHitPoint(void);
+		unsigned int	getEnergyPoint(void);
+		std::string		getName(void);
 };
 
 #endif

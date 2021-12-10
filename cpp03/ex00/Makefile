@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/09 19:32:55 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/10 21:37:02 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME 	=	
+NAME 	=	ClapTrap
 
 INC_DIR	=	includes
 INCLUDE	=	ClapTrap.hpp
