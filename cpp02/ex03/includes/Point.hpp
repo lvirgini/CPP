@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:05:11 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/09 17:32:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/10 19:54:49 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ class	Point {
 
 		Point &		operator=(Point const & p);
 
-		Fixed		getX(void);
-		Fixed		getY(void);
-
+		Fixed		getX(void) const ;
+		Fixed		getY(void) const ;
+		Fixed		dot_product(Point const & v1, Point const & v2) const ;
+		Point		create_vector(Point const & a, Point const & b) const ;
+		static Fixed		determinant(Point const & a, Point const & b, Point const & c) ;
+		static Fixed		crossProduct(Point const & v1, Point const & v2) ;
 	private:
 
 		Fixed const _x;

@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/08 10:42:13 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/10 19:41:17 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,8 @@ OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 
 CC 		=	c++
 
-CFLAG 	= 	-Wall -Wextra -std=c++98 -pedantic
+CFLAG 	= 	-Wall -Wextra -Werror
 IFLAG 	=	$(foreach dir, $(INC_DIR), -I $(dir)/ )
-
 
 vpath %.cpp $(foreach dir, $(SRC_DIR)/, $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR)/, $(dir):)

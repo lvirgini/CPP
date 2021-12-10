@@ -6,27 +6,18 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:40:23 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/09 16:32:27 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/10 19:53:13 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 #include <cmath>
-#include <bitset>///
-#include <climits>////
 
-	//Fixed const d( b );
-	//float	f = 42.1234f;
-	//int		i = roundf(f * (1 << 8));
-	//std::cout << ((float)i / (1 << 8)) << std::endl;
-
-	//a = Fixed( 1234.4321f );
-
-//	std::cout << "b is " << std::bitset<16>(b.getRawBits()) << std::endl;
-//	std::cout << "c is " <<  std::bitset<16>((float)42.42f * (1 << 8 )) << std::endl;
-/*	a = b + b;
-	std::cout << "a is " << std::bitset<16>(a.getRawBits()) << std::endl;*/
+/*
+** to print in binary : std::bitset<16>( fixed.getRawBits() )
+** with includes <bitset> and <climits>
+*/
 
 void	main_test()
 {
@@ -83,14 +74,6 @@ int main( void ) {
 
 	std::cout << "c != d ? " << (c != d) << std::endl;
 	std::cout << "a != b ? " << (a != b) << std::endl << std::endl;
-
-	Fixed	e;
-
-	std::cout << "e is " << e << std::endl;
-	std::cout << "e++ = " << e++ << std::endl;
-	std::cout << "++e = " << ++e << std::endl;
-	std::cout << "e-- = " << e-- << std::endl;
-	std::cout << "--e = " << --e << std::endl << std::endl;
 
 
 	std::cout << " min (a, b) = " << Fixed::min(a, b) << std::endl;

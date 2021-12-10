@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:39:44 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/08 10:44:21 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/10 11:05:54 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ Fixed::~Fixed(void) {
 Fixed &	Fixed::operator=(Fixed const & f) {
 
 	std::cout << "Assignation operator called" << std::endl;
-	if (this != &f)
-		this->_nb = f.getRawBits();
+	this->_nb = f.getRawBits();
 	return (*this);
 }
 /* -------------------------------------------------------------------------- */
