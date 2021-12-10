@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/09 17:40:24 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/10 22:46:55 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME 	=
+NAME 	=	ScavTrap
 
 INC_DIR	=	includes
-INCLUDE	=	
+INCLUDE	=	ClapTrap.hpp Scavtrap.hpp
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
 SRC_DIR	=	srcs
-SRC		= 	
+SRC		= 	main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ_DIR =	obj/
 OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
