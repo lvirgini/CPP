@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:42:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 22:45:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:46:00 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
 # include <string>
 
-# define SCAVTRAP_HITPOINTS 100
-# define SCAVTRAP_ENERGY 50
-# define SCAVTRAP_DAMAGE 20
+# define FRAGTRAP_HITPOINTS 100
+# define FRAGTRAP_ENERGY 100
+# define FRAGTRAP_DAMAGE 30
 
-class	ScavTrap : public ClapTrap {
+class	FragTrap : public ClapTrap {
 
 	public:
 
@@ -28,18 +28,16 @@ class	ScavTrap : public ClapTrap {
 ** Constructor Destructor 
 */
 
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & tocopy);
-		~ScavTrap(void);
+		FragTrap(std::string name);
+		FragTrap(FragTrap const & tocopy);
+		~FragTrap(void);
 
-		ScavTrap &	operator=(ScavTrap const & Clap);
+		FragTrap &	operator=(FragTrap const & Clap);
 
 /*
 ** Functions
 */
-		void	guardGate(void) const ;
-		void	attack(std::string const target) const;
-
+		void	hightFivesGuys(void) const ;
 };
 
 #endif

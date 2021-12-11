@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Diamond.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 17:42:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 22:45:16 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/12/11 19:17:50 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/12/11 22:29:06 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMOND_HPP
+# define DIAMOND_HPP
 
 # include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 # include <string>
 
-# define SCAVTRAP_HITPOINTS 100
-# define SCAVTRAP_ENERGY 50
-# define SCAVTRAP_DAMAGE 20
+class	Diamond : public ScavTrap, public FragTrap {
 
-class	ScavTrap : public ClapTrap {
+	private:
+			std::string _name;
 
 	public:
 
-/* 
-** Constructor Destructor 
-*/
+		Diamond(std::string name);
+		Diamond(Diamond const & copy);
+		~Diamond(void);
 
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & tocopy);
-		~ScavTrap(void);
-
-		ScavTrap &	operator=(ScavTrap const & Clap);
+		Diamond &	operator=(Diamond const & diams);
 
 /*
-** Functions
+** Unique functions
 */
-		void	guardGate(void) const ;
-		void	attack(std::string const target) const;
+
+		void		announce(void) const ;
+		void		whoAmI(void) const ;
 
 };
 

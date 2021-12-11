@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:42:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 22:45:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:05:28 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define SCAVTRAP_ENERGY 50
 # define SCAVTRAP_DAMAGE 20
 
-class	ScavTrap : public ClapTrap {
+class	ScavTrap : virtual public ClapTrap {
 
 	public:
 

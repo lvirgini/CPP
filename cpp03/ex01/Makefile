@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/10 22:46:55 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/11 23:12:53 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME 	=	ScavTrap
+NAME 	=	trap
 
 INC_DIR	=	includes
 INCLUDE	=	ClapTrap.hpp Scavtrap.hpp

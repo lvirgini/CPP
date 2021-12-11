@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:42:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 23:07:55 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/11 23:12:18 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class	ClapTrap {
 
 /* -------------------------------------------------------------------------- */
-	private:
+	protected:
 
 		std::string		_name;
 		unsigned int	_hitpoints;
@@ -46,7 +46,7 @@ class	ClapTrap {
 /*
 ** Functions
 */
-		void	attack(std::string const & target) const ;
+		void	attack(std::string const & target) const;
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		void	announce(void) const ;

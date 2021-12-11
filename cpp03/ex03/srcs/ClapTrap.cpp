@@ -6,12 +6,13 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:49:06 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 23:12:34 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/11 23:12:02 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
+
 /* -------------------------------------------------------------------------- */
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
@@ -78,16 +79,11 @@ std::string		ClapTrap::getName(void) const
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
-
 void	ClapTrap::attack(std::string const & target) const
 {
 	std::cout << "ClapTrap  " << this->_name << " attacks " << target \
 	<< " causing " << this->_attack_damage << " points of damage." << std::endl;
 }
-
-/*
-** take Damage
-*/
 
 void 	ClapTrap::takeDamage(unsigned int amount) 
 {
@@ -104,21 +100,12 @@ void 	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
-/*
-** be repaired
-*/
-
 void	ClapTrap::beRepaired(unsigned int amount) 
 {
 	this->_hitpoints += amount;
 	std::cout << "ClapTrap  " << this->_name << " is repaired and now has " \
 	 << this->_hitpoints << " hitpoints" << std::endl;
 }
-
-
-/*
-** Annonce
-*/
 
 void	ClapTrap::announce(void) const {
 
