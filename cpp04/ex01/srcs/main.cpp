@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:16:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 12:19:30 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:40:58 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <iostream>
 
 #define NB_ANIMALS	2
+
 int main(void)
 {
 /*	const Animal* j = new Dog();
@@ -40,7 +41,9 @@ int main(void)
 			tab[i] = new Dog();
 	}
 
-	// Cat	*ptr_cat = tab[0];
+	 Cat	cat;
+	 Cat	cat2 = cat;
+	 
 	// Cat *ptr_dog = tab[NB_ANIMALS - 1];
 
 	std::cout << "tab of Animals : half Cat, half Dog getType() then makeSound() then destroy() : " << std::endl;

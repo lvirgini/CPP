@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/12 01:01:09 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/12 10:04:11 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME 	=	trap
+NAME 	=	polymorphism
 
 INC_DIR	=	includes
 INCLUDE	=	Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp

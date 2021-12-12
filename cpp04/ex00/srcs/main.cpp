@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:16:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 01:10:34 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/12 10:03:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 int main(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-	const WrongAnimal* wrongcat = new WrongCat();
+	const Animal 		*meta = new Animal();
+	const Animal 		*dog = new Dog();
+	const Animal 		*cat = new Cat();
+	const WrongAnimal	*wrongcat = new WrongCat();
 	
 	std::cout << std::endl;
 	
