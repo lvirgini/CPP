@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:09:05 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 01:07:41 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:00:44 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ Animal::Animal(std::string type) : _type(type)
 	std::cout << "Animal type:" << type << " created" << std::endl;
 }
 
-Animal::Animal(Animal const & animal)
+Animal::Animal(Animal const & animal) : _type(animal._type)
 {
-	*this = animal;
 	std::cout << "Animal type:" << this->_type << " created by copy" << std::endl;
 }
 

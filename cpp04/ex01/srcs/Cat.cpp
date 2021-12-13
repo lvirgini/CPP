@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 10:39:58 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:15:21 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Cat::~Cat(void)
 
 Cat &	Cat::operator=(Cat const & cat)
 {
+	std::cout << "Cat operator =" << std::endl;
 	if (this != &cat)
 		*this = cat;
 	return (*this);
