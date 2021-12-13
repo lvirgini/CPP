@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:49:06 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 22:51:20 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:45:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,15 @@ FragTrap::~FragTrap(void)
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-FragTrap &	FragTrap::operator=(FragTrap const & frag)
+FragTrap &	FragTrap::operator=(FragTrap const & copy)
 {
-	if (this != &frag)
-		*this = frag;
+	if (this != &copy)
+	{
+		this->_name = copy._name;
+		this->_attack_damage = copy._attack_damage;
+		this->_energy_point = copy._energy_point;
+		this->_hitpoints = copy._hitpoints;
+	}
 	return (*this);
 }
 

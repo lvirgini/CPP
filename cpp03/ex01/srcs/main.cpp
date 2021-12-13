@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:33:40 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/13 13:55:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/13 16:08:16 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ int		main(void)
 	serge.beRepaired(20);
 	serge.guardGate();
 	std::cout << std::endl;
+
+	return (0);
 }

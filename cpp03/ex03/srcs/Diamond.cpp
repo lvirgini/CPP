@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:39:20 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/13 13:56:24 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:45:32 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,15 @@ Diamond::~Diamond(void)
 /* -------------------------------------------------------------------------- */
 
 
-Diamond &	Diamond::operator=(Diamond const & diams)
+Diamond &	Diamond::operator=(Diamond const & copy)
 {
-	if (this != &diams)
-		*this = diams;
+	if (this != &copy)
+	{
+		this->_name = copy._name;
+		this->_attack_damage = copy._attack_damage;
+		this->_energy_point = copy._energy_point;
+		this->_hitpoints = copy._hitpoints;
+	}
 	return (*this);
 }
 

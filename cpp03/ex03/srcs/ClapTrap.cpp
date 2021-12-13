@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:49:06 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/11 23:12:02 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:43:21 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,12 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap &		ClapTrap::operator=(ClapTrap const & clap)
 {
-	if (this != &clap)
-		*this = clap;
+	if (this == &clap)
+		return (*this);
+	this->_name = clap._name;
+	this->_attack_damage = clap._attack_damage;
+	this->_energy_point = clap._energy_point;
+	this->_hitpoints = clap._hitpoints;
 	return (*this);
 }
 
