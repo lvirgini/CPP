@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 01:04:54 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:38:05 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ Cat::~Cat(void)
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-Cat &	Cat::operator=(Cat const & cat)
+Cat &	Cat::operator=(Cat const & copy)
 {
-	if (this != &cat)
-		*this = cat;
+	if (this != &copy)
+	{
+		this->_type = copy._type;
+	}
 	return (*this);
 }
 

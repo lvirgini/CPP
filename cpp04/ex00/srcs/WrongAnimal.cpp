@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:50:59 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 01:07:01 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:45:08 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ WrongAnimal::~WrongAnimal(void)
 /* -------------------------------------------------------------------------- */
 
 
-WrongAnimal &	WrongAnimal::operator=(WrongAnimal const & wrongAnimal)
+WrongAnimal &	WrongAnimal::operator=(WrongAnimal const & copy)
 {
-	if (this != &wrongAnimal)
-		*this = wrongAnimal;
+	if (this != &copy)
+	{
+		this->_type = copy._type;
+	}
 	return (*this);
 }
 

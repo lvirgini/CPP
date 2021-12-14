@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 23:58:54 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 01:01:38 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:48:07 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class	Animal
 		Animal(Animal const & animal);
 		
 	/*	destructor */
-		~Animal(void);
+		virtual ~Animal(void);
 
 	/*	operator */
 		Animal &	operator=(Animal const & animal);

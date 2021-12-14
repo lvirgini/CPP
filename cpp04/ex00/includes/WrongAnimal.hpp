@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:56:47 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 00:59:05 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:49:08 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class	WrongAnimal
 		WrongAnimal(WrongAnimal const & Wronganimal);
 		
 	/*	destructor */
-		~WrongAnimal(void);
+		virtual ~WrongAnimal(void);
 
 	/*	operator */
 		WrongAnimal &	operator=(WrongAnimal const & Wronganimal);
@@ -39,7 +39,7 @@ class	WrongAnimal
 		std::string		getType(void) const ;
 
 	/*	NOT methode	*/
-		void	makeSound(void) const ;
+		void			makeSound(void) const ;
 };
 
 #endif

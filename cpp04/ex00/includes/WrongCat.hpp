@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:48:01 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 00:55:56 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:32:42 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class	WrongCat : public WrongAnimal
 
 
 	/*	NOT methode	*/
-		void	makeSound(void) const ;
+		void		makeSound(void) const ;
 };
 
 #endif
