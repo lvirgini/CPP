@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:16:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 12:47:51 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:53:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int main(void)
 	std::cout << std::endl;
 
 	delete meta;
-	delete cat;
 	delete dog;
+	delete cat;
 	delete wrongcat;
 	
 	return (0);

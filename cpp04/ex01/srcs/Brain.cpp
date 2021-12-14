@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:09:16 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 12:20:00 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 13:02:54 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ Brain::Brain(void)
 {
 	this->setIdees("Eat or sleep ?");
 	std::cout << "a brain is created" << std::endl;
+}
+
+Brain::Brain(std::string idees)
+{
+	this->setIdees(idees);
+	std::cout << "a brain is created with " << idees << " idees" << std::endl;
 }
 
 Brain::Brain(Brain const & copy)

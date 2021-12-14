@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:09:25 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 12:15:43 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 13:03:22 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	Brain
 	public:
 
 		Brain(void) ;
+		Brain(std::string idees);
 		Brain(Brain const & copy);
 		~Brain(void) ;
 

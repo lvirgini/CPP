@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 10:39:42 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 13:00:41 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ Dog::Dog(void) : Animal("dog")
 	std::cout << "Dog created" << std::endl;
 }
 
-Dog::Dog(Dog const & dog) : Animal(dog)
+Dog::Dog(Dog const & copy) : Animal(copy)
 {
+	this->_dogBrain = new Brain(*copy._dogBrain);
 	std::cout << "Dog created by copy" << std::endl;
 }
 
@@ -37,10 +38,16 @@ Dog::~Dog(void)
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-Dog &	Dog::operator=(Dog const & dog)
+Dog &	Dog::operator=(Dog const & copy)
 {
-	if (this != &dog)
-		*this = dog;
+	std::cout << "Dog operator =" << std::endl;
+	if (this != &copy)
+	{
+		delete this->_dogBrain;
+
+		this->_dogBrain = copy._dogBrain;
+		this->_type = copy._type;
+	}
 	return (*this);
 }
 

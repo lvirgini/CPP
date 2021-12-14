@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/13 14:15:21 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:55:31 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Cat::Cat(void) : Animal("cat")
 
 Cat::Cat(Cat const & cat) : Animal(cat)
 {
+	this->_catBrain = cat._catBrain;
 	std::cout << "Cat created by copy" << std::endl;
 }
 
@@ -37,11 +38,14 @@ Cat::~Cat(void)
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-Cat &	Cat::operator=(Cat const & cat)
+Cat &	Cat::operator=(Cat const & copy)
 {
 	std::cout << "Cat operator =" << std::endl;
-	if (this != &cat)
-		*this = cat;
+	if (this != &copy)
+	{
+		this->_catBrain = copy._catBrain;
+		this->_type = copy._type;
+	}
 	return (*this);
 }
 

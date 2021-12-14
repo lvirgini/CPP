@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:08:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 10:31:43 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:53:32 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 class	Cat : public Animal
 {
-
 	private:
 		Brain	*_catBrain;
 

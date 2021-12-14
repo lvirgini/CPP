@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 12:39:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:56:41 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ Dog::~Dog(void)
 Dog &	Dog::operator=(Dog const & copy)
 {
 	if (this != &copy)
-	{
 		this->_type = copy._type;
-	}
 	return (*this);
 }
 
