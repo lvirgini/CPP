@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 23:58:54 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 10:28:26 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 13:54:44 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	Animal
 {
 	protected:
 
-			std::string		_type;
+		std::string		_type;
 
 	public:
 

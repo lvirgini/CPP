@@ -6,29 +6,35 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:09:16 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 13:02:54 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:10:54 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 #include <iostream>
 
+/* -------------------------------------------------------------------------- */
+/*                     Constructor Destructor                                 */
+/* -------------------------------------------------------------------------- */
+
 Brain::Brain(void)
 {
-	this->setIdees("Eat or sleep ?");
+	this->setIdeas("Eat or sleep ?");
 	std::cout << "a brain is created" << std::endl;
 }
 
-Brain::Brain(std::string idees)
+Brain::Brain(std::string ideas)
 {
-	this->setIdees(idees);
-	std::cout << "a brain is created with " << idees << " idees" << std::endl;
+	this->setIdeas(ideas);
+	std::cout << "a brain is created with " << ideas << " ideas" << std::endl;
 }
 
 Brain::Brain(Brain const & copy)
 {
-	for (int i = 0; i < MAX_IDEES; i++)
-		this->_idees[i] = copy.getIdee(i);
+	std::cout << "Brain to copy" << this->_ideas << std::endl;
+	std::cout << "Brain copy" << copy._ideas << std::endl;
+	for (int i = 0; i < MAX_IDEAS; i++)
+		this->_ideas[i] = copy._ideas[i];
 }
 
 Brain::~Brain(void)
@@ -36,24 +42,41 @@ Brain::~Brain(void)
 	std::cout << "a brain is destroy" << std::endl;
 }
 
-Brain &		Brain::operator=(Brain const & equal)
+/* -------------------------------------------------------------------------- */
+/*                                Operator                                    */
+/* -------------------------------------------------------------------------- */
+
+Brain &		Brain::operator=(Brain const & copy)
 {
-	if (this != &equal)
-		*this = equal;
+	if (this != &copy)
+	{
+		for (int i = 0; i < MAX_IDEAS; i++)
+			this->_ideas[i] = copy._ideas[i];
+	}
 	return (*this);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                               Functions                                    */
+/* -------------------------------------------------------------------------- */
 
-std::string	Brain::getIdee(int	index) const
+
+std::string	Brain::getIdea(int	index) const
 {
-	if (index < MAX_IDEES)
-		return (this->_idees[index]);
+	if (index < MAX_IDEAS)
+		return (this->_ideas[index]);
 	return (NULL);
 }
 
-
-void		Brain::setIdees(std::string idees)
+void		Brain::setIdeas(std::string ideas)
 {
-	for (int i = 0; i < MAX_IDEES; i++)
-		this->_idees[i] = idees;
+	for (int i = 0; i < MAX_IDEAS; i++)
+		this->_ideas[i] = ideas;
+}
+
+void		Brain::printIdeas(void) const
+{
+	std::cout << "list of ideas" << std::endl;
+	for (int i = 0; i < MAX_IDEAS; i++)
+		std::cout << i << " ideas = " << this->_ideas[i] << std::endl;	
 }

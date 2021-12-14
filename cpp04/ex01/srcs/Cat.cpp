@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 12:55:31 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 13:58:26 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ Cat &	Cat::operator=(Cat const & copy)
 	std::cout << "Cat operator =" << std::endl;
 	if (this != &copy)
 	{
+		delete this->_catBrain;
+		this->_catBrain = new Brain();
 		this->_catBrain = copy._catBrain;
 		this->_type = copy._type;
 	}

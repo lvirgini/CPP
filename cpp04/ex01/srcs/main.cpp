@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:16:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 12:59:52 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:15:21 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,36 @@ int main(void)
 	delete i;
 	*/
 
+	/*Brain	*b;
+	{
+		Brain b2;
+		b2.setIdeas("truc");
+		b = new Brain(b2);
+	}
+	b->printIdeas();
+	delete b;
 
-	Cat *a = new Cat();
-	Cat *b ;
 
-	*b = *a;
+	Brain *b = new Brain();
+	{
+		Brain b2;
+		b2.setIdeas("truc");
+		*b = b2;
+	}
+	b->printIdeas();
+	delete b;
+*/
 
+
+	Dog a;
+	{
+		Dog b;
+		b.setBrainIdeas("dogdogdog");
+		a = b;
+	}
+	a.displayBrain();
+
+	
 	// std::cout << "tab of Animals : half Cat, half Dog created : " << std::endl;
 	// Animal *tab[2];
 	// for (int i = 0; i < NB_ANIMALS; i++)

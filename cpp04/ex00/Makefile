@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/14 13:32:32 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/14 13:44:29 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ vpath %.hpp $(foreach dir, $(INC_DIR)/, $(dir):)
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)
 			@mkdir -p $(OBJ_DIR)
-			@echo "\033[32mCompilation ... $(foreach file, $< , $(notdir $<))\033[0m"
+			@echo "\033[32mCompilation of ... $(foreach file, $< , $(notdir $<))\033[0m"
 			@$(CC) $(CFLAG) $(IFLAG) -o $@ -c $< 
 
 $(NAME):	$(OBJ)

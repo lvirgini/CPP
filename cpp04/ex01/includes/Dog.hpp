@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:08:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/12 10:35:33 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/14 16:24:18 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ class	Dog : public Animal
 
 	/*	methode	*/
 		virtual void	makeSound(void) const ;
+		void			setBrainIdeas(std::string ideas);
+		void			displayBrain(void) const ;
+
 };
 
 #endif
