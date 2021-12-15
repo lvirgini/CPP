@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:08:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 16:24:18 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:20:55 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	Dog : public Animal
 		Dog(Dog const & dog);
 		
 	/*	destructor */
-		virtual ~Dog(void);
+		~Dog(void);
 
 	/*	operator */
 		Dog &	operator=(Dog const & dog);

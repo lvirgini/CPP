@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:09:16 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 18:10:54 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:23:50 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ Brain::Brain(std::string ideas)
 
 Brain::Brain(Brain const & copy)
 {
-	std::cout << "Brain to copy" << this->_ideas << std::endl;
-	std::cout << "Brain copy" << copy._ideas << std::endl;
 	for (int i = 0; i < MAX_IDEAS; i++)
 		this->_ideas[i] = copy._ideas[i];
 }
@@ -78,5 +76,5 @@ void		Brain::printIdeas(void) const
 {
 	std::cout << "list of ideas" << std::endl;
 	for (int i = 0; i < MAX_IDEAS; i++)
-		std::cout << i << " ideas = " << this->_ideas[i] << std::endl;	
+		std::cout << i << " idea = " << this->_ideas[i] << std::endl;	
 }

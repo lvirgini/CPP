@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:08:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 12:53:32 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:21:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ class	Cat : public Animal
 
 	/*	methode	*/
 		virtual void	makeSound(void) const ;
+		void			setBrainIdeas(std::string ideas);
+		void			displayBrain(void) const ;
+
 };
 
 #endif

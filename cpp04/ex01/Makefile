@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/14 16:28:15 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/15 19:25:42 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@
 NAME 	=	polymorphism
 
 INC_DIR	=	includes
-INCLUDE	=	Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp Brain.hpp
+INCLUDE	=	Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
 SRC_DIR	=	srcs
-SRC		= 	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC		= 	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJ_DIR =	obj/
 OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))

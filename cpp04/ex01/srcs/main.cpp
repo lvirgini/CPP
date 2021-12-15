@@ -6,85 +6,99 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:16:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 18:15:21 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:37:57 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 #include <iostream>
 
-#define NB_ANIMALS	2
+#define NB_ANIMALS	4
 
-int main(void)
+
+void	test_subject(void)
 {
-/*	const Animal* j = new Dog();
+	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	
 
 	delete j;//should not create a leak
 	delete i;
+}
+
+void	test_deep_copy(void)
+{
+	Dog		*a = new Dog();
+	Dog		*b = new Dog();
+
+	b->setBrainIdeas("Trees");
+	*a = *b;
+	delete b;
+	a->displayBrain();
+	delete a;
+}
+
+void	cat_test_deep_copy(void)
+{
+	Cat		*a = new Cat();
+	Cat		*b = new Cat();
+
+	b->setBrainIdeas("Trees");
+	*a = *b;
+	delete b;
+	a->displayBrain();
+	delete a;
+}
+
+void	test_deep_copy2(void)
+{
+	Dog		*a = new Dog();
+	Dog		*b = new Dog(*a);
+
+	a->setBrainIdeas("empty file system");
+	delete a;
+	b->displayBrain();
+	delete b;
+}
+
+void	cat_test_deep_copy2(void)
+{
+	Cat		*a = new Cat();
+	Cat		*b = new Cat(*a);
+
+	a->setBrainIdeas("empty file system");
+	delete a;
+	b->displayBrain();
+	delete b;
+}
+
+int main(void)
+{
+/*
+	test_subject();
+	std::cout << std::endl;
+	test_deep_copy();
+	std::cout << std::endl;
+	test_deep_copy2();
+	std::cout << std::endl;	
+	cat_test_deep_copy();
+	std::cout << std::endl;
+	cat_test_deep_copy2();
+	std::cout << std::endl;
 	*/
 
-	/*Brain	*b;
+	Animal *all = new Animal[NB_ANIMALS];
+
+	for (int i = 0; i < NB_ANIMALS; i++)
 	{
-		Brain b2;
-		b2.setIdeas("truc");
-		b = new Brain(b2);
+		if (i < NB_ANIMALS / 2)
+			all[i] = Dog();
+		else
+			all[i] = Cat();
 	}
-	b->printIdeas();
-	delete b;
 
-
-	Brain *b = new Brain();
-	{
-		Brain b2;
-		b2.setIdeas("truc");
-		*b = b2;
-	}
-	b->printIdeas();
-	delete b;
-*/
-
-
-	Dog a;
-	{
-		Dog b;
-		b.setBrainIdeas("dogdogdog");
-		a = b;
-	}
-	a.displayBrain();
-
-	
-	// std::cout << "tab of Animals : half Cat, half Dog created : " << std::endl;
-	// Animal *tab[2];
-	// for (int i = 0; i < NB_ANIMALS; i++)
-	// {
-	// 	if (i < 1)
-	// 		tab[i] = new Cat();
-	// 	else
-	// 		tab[i] = new Dog();
-	// }
-
-	//  Cat	cat;
-	//  Cat	cat2 = cat;
-	 
-	// // Cat *ptr_dog = tab[NB_ANIMALS - 1];
-
-	// std::cout << "tab of Animals : half Cat, half Dog getType() then makeSound() then destroy() : " << std::endl;
-	// for (int i = 0; i < NB_ANIMALS; i++)
-	// {
-	// 	std::cout << "Animal[" << i << "] = ";
-	// 	tab[i]->getType();
-	// 	tab[i]->makeSound();
-	// 	delete tab[i];
-	// }
-
-
-
+	delete [] all;
 	return (0);
 }

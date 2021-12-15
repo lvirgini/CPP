@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 13:58:26 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:20:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::Cat(void) : Animal("cat")
 
 Cat::Cat(Cat const & cat) : Animal(cat)
 {
-	this->_catBrain = cat._catBrain;
+	this->_catBrain = new Brain(*cat._catBrain);
 	std::cout << "Cat created by copy" << std::endl;
 }
 
@@ -43,9 +43,7 @@ Cat &	Cat::operator=(Cat const & copy)
 	std::cout << "Cat operator =" << std::endl;
 	if (this != &copy)
 	{
-		delete this->_catBrain;
-		this->_catBrain = new Brain();
-		this->_catBrain = copy._catBrain;
+		*this->_catBrain = *copy._catBrain;
 		this->_type = copy._type;
 	}
 	return (*this);
@@ -58,4 +56,14 @@ Cat &	Cat::operator=(Cat const & copy)
 void	Cat::makeSound(void) const
 {
 	std::cout << "Cat sounds: \"Miaou\"" << std::endl;
+}
+
+void	Cat::setBrainIdeas(std::string ideas)
+{
+	this->_catBrain->setIdeas(ideas);
+}
+
+void	Cat::displayBrain(void) const
+{
+	this->_catBrain->printIdeas();
 }
