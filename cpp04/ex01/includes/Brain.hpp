@@ -6,14 +6,14 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:09:25 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/14 18:04:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/22 14:39:44 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-# define MAX_IDEAS	10
+# define MAX_IDEAS	100
 
 #include <string>
 

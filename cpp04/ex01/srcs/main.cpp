@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:16:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/15 19:37:57 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/22 14:43:47 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,31 +74,38 @@ void	cat_test_deep_copy2(void)
 	delete b;
 }
 
-int main(void)
+void	test_array_of_animals(void)
 {
-/*
-	test_subject();
-	std::cout << std::endl;
-	test_deep_copy();
-	std::cout << std::endl;
-	test_deep_copy2();
-	std::cout << std::endl;	
-	cat_test_deep_copy();
-	std::cout << std::endl;
-	cat_test_deep_copy2();
-	std::cout << std::endl;
-	*/
-
-	Animal *all = new Animal[NB_ANIMALS];
+	Animal *all[NB_ANIMALS];
 
 	for (int i = 0; i < NB_ANIMALS; i++)
 	{
 		if (i < NB_ANIMALS / 2)
-			all[i] = Dog();
+			all[i] = new Dog();
 		else
-			all[i] = Cat();
+			all[i] = new Cat();
 	}
 
-	delete [] all;
+	for (int i = 0; i < NB_ANIMALS; i++)
+		all[i]->makeSound();
+
+	for (int i = 0; i < NB_ANIMALS; i++)
+		delete all[i];
+}
+
+int main(void)
+{
+	test_subject();
+	std::cout << std::endl << std::endl;
+	test_deep_copy();
+	std::cout << std::endl << std::endl;
+	test_deep_copy2();
+	std::cout << std::endl << std::endl;	
+	cat_test_deep_copy();
+	std::cout << std::endl << std::endl;
+	cat_test_deep_copy2();
+	std::cout << std::endl << std::endl;
+	test_array_of_animals();
+
 	return (0);
 }

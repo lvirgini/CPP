@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:08:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/15 19:21:01 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/15 20:16:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class	Cat : public Animal
 		Cat(Cat const & cat);
 		
 	/*	destructor */
-		~Cat(void);
+		virtual ~Cat(void);
 
 	/*	operator */
 		Cat &	operator=(Cat const & cat);
