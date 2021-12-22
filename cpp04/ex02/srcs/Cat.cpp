@@ -1,52 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 00:09:05 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 15:10:42 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/12/15 19:20:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-
-Animal::Animal(void) :_type("undefined")
+Cat::Cat(void) : Animal("cat")
 {
-	std::cout << "Animal type:" << this->_type << " created" << std::endl;
+	this->_catBrain = new Brain();
+	std::cout << "Cat created" << std::endl;
 }
 
-
-Animal::Animal(std::string type) : _type(type) 
+Cat::Cat(Cat const & cat) : Animal(cat)
 {
-	std::cout << "Animal type:" << type << " created" << std::endl;
+	this->_catBrain = new Brain(*cat._catBrain);
+	std::cout << "Cat created by copy" << std::endl;
 }
 
-Animal::Animal(Animal const & animal) : _type(animal._type)
+Cat::~Cat(void)
 {
-	std::cout << "Animal type:" << this->_type << " created by copy" << std::endl;
-}
-
-Animal::~Animal(void)
-{
-	std::cout << "Animal type:" << this->_type << " destroy" << std::endl;
+	delete this->_catBrain;
+	std::cout << "Cat destroy" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-
-Animal &	Animal::operator=(Animal const & copy)
+Cat &	Cat::operator=(Cat const & copy)
 {
+	std::cout << "Cat operator =" << std::endl;
 	if (this != &copy)
+	{
+		*this->_catBrain = *copy._catBrain;
 		this->_type = copy._type;
+	}
 	return (*this);
 }
 
@@ -54,12 +53,17 @@ Animal &	Animal::operator=(Animal const & copy)
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
-void		Animal::makeSound(void) const 
+void	Cat::makeSound(void) const
 {
-	std::cout << "Animal sounds: is undefined" << std::endl;
+	std::cout << "Cat sounds: \"Miaou\"" << std::endl;
 }
 
-std::string		Animal::getType(void) const
+void	Cat::setBrainIdeas(std::string ideas)
 {
-	return(this->_type);
+	this->_catBrain->setIdeas(ideas);
+}
+
+void	Cat::displayBrain(void) const
+{
+	this->_catBrain->printIdeas();
 }

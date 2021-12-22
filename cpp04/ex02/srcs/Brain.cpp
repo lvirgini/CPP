@@ -1,52 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 00:09:05 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 15:10:42 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/12/12 10:09:16 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/12/15 19:23:50 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
 /* -------------------------------------------------------------------------- */
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-
-Animal::Animal(void) :_type("undefined")
+Brain::Brain(void)
 {
-	std::cout << "Animal type:" << this->_type << " created" << std::endl;
+	this->setIdeas("Eat or sleep ?");
+	std::cout << "a brain is created" << std::endl;
 }
 
-
-Animal::Animal(std::string type) : _type(type) 
+Brain::Brain(std::string ideas)
 {
-	std::cout << "Animal type:" << type << " created" << std::endl;
+	this->setIdeas(ideas);
+	std::cout << "a brain is created with " << ideas << " ideas" << std::endl;
 }
 
-Animal::Animal(Animal const & animal) : _type(animal._type)
+Brain::Brain(Brain const & copy)
 {
-	std::cout << "Animal type:" << this->_type << " created by copy" << std::endl;
+	for (int i = 0; i < MAX_IDEAS; i++)
+		this->_ideas[i] = copy._ideas[i];
 }
 
-Animal::~Animal(void)
+Brain::~Brain(void)
 {
-	std::cout << "Animal type:" << this->_type << " destroy" << std::endl;
+	std::cout << "a brain is destroy" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-
-Animal &	Animal::operator=(Animal const & copy)
+Brain &		Brain::operator=(Brain const & copy)
 {
 	if (this != &copy)
-		this->_type = copy._type;
+	{
+		for (int i = 0; i < MAX_IDEAS; i++)
+			this->_ideas[i] = copy._ideas[i];
+	}
 	return (*this);
 }
 
@@ -54,12 +58,23 @@ Animal &	Animal::operator=(Animal const & copy)
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
-void		Animal::makeSound(void) const 
+
+std::string	Brain::getIdea(int	index) const
 {
-	std::cout << "Animal sounds: is undefined" << std::endl;
+	if (index < MAX_IDEAS)
+		return (this->_ideas[index]);
+	return (NULL);
 }
 
-std::string		Animal::getType(void) const
+void		Brain::setIdeas(std::string ideas)
 {
-	return(this->_type);
+	for (int i = 0; i < MAX_IDEAS; i++)
+		this->_ideas[i] = ideas;
+}
+
+void		Brain::printIdeas(void) const
+{
+	std::cout << "list of ideas" << std::endl;
+	for (int i = 0; i < MAX_IDEAS; i++)
+		std::cout << i << " idea = " << this->_ideas[i] << std::endl;	
 }

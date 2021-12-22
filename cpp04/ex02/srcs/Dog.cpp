@@ -1,52 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 00:09:05 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 15:10:42 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/12/12 00:19:24 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/12/15 19:07:32 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-
-Animal::Animal(void) :_type("undefined")
+Dog::Dog(void) : Animal("dog")
 {
-	std::cout << "Animal type:" << this->_type << " created" << std::endl;
+	this->_dogBrain = new Brain();
+	std::cout << "Dog created" << std::endl;
 }
 
-
-Animal::Animal(std::string type) : _type(type) 
+Dog::Dog(Dog const & copy) : Animal(copy)
 {
-	std::cout << "Animal type:" << type << " created" << std::endl;
+	this->_dogBrain = new Brain(*copy._dogBrain);
+	std::cout << "Dog created by copy" << std::endl;
 }
 
-Animal::Animal(Animal const & animal) : _type(animal._type)
+Dog::~Dog(void)
 {
-	std::cout << "Animal type:" << this->_type << " created by copy" << std::endl;
-}
-
-Animal::~Animal(void)
-{
-	std::cout << "Animal type:" << this->_type << " destroy" << std::endl;
+	delete this->_dogBrain;
+	std::cout << "Dog destroy" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-
-Animal &	Animal::operator=(Animal const & copy)
+Dog &	Dog::operator=(Dog const & copy)
 {
+	std::cout << "Dog operator =" << std::endl;
 	if (this != &copy)
+	{
+		*this->_dogBrain = *copy._dogBrain;
 		this->_type = copy._type;
+	}
 	return (*this);
 }
 
@@ -54,12 +53,17 @@ Animal &	Animal::operator=(Animal const & copy)
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
-void		Animal::makeSound(void) const 
+void	Dog::makeSound(void) const
 {
-	std::cout << "Animal sounds: is undefined" << std::endl;
+	std::cout << "Dog sounds: \"Ouaff\"" << std::endl;
 }
 
-std::string		Animal::getType(void) const
+void	Dog::setBrainIdeas(std::string ideas)
 {
-	return(this->_type);
+	this->_dogBrain->setIdeas(ideas);
+}
+
+void	Dog::displayBrain(void) const
+{
+	this->_dogBrain->printIdeas();
 }

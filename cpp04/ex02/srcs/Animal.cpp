@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 00:09:05 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 15:10:42 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:15:08 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,6 @@ Animal &	Animal::operator=(Animal const & copy)
 /* -------------------------------------------------------------------------- */
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
-
-void		Animal::makeSound(void) const 
-{
-	std::cout << "Animal sounds: is undefined" << std::endl;
-}
 
 std::string		Animal::getType(void) const
 {
