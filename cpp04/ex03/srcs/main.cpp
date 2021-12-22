@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:33:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 21:48:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/22 21:49:13 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,7 @@
 #include "Ice.hpp"
 
 int main()
-{/*
-	Cure	a =  Cure();
-	Ice		b = Ice();
-	
-	AMateria *m1 = new Ice();
-	AMateria *m2 = new Cure();
-
-	ICharacter *c1 = new Character("tt");
-	c1->equip(m1);
-	c1->equip(m2);
-	c1->unequip(2);
-	c1->unequip(0);
-	c1->equip(m2);
-	c1->equip(m2);
-	c1->equip(m2);
-
-	c1->use(0, *c1);
-	c1->use(1, *c1);
-	c1->use(2, *c1);
-	c1->use(3, *c1);
-	c1->use(42, *c1);
-
-	delete c1;
-	delete m1;
-	delete m2;
-	
-	*/
+{
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
