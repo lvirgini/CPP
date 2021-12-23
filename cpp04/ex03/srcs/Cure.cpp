@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:04:14 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 20:20:36 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/23 12:01:31 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ AMateria *Cure::clone(void) const
 
 void Cure::use(ICharacter & target)
 {
-	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
