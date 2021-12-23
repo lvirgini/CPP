@@ -6,6 +6,8 @@
 # define	HIGHEST_GRADE 	1
 # define 	LOWEST_GRADE	150
 
+class Form;
+
 class	Bureaucrat
 {
 	private:
@@ -31,9 +33,11 @@ class	Bureaucrat
 	// functions
 		void	upGrade(void) ;
 		void	downGrade(void) ;
+		void	signForm(Form & form) const ;
+
 
 	// exceptions class
-		class GradeTooHightException : public std::exception
+		class GradeTooHighException : public std::exception
 		{
 			public :
 				virtual const char *what() const throw();

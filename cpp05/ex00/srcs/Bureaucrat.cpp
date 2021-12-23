@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 22:06:05 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/22 23:59:32 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/23 16:43:57 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < HIGHEST_GRADE)
-		throw (GradeTooHightException());
+		throw (GradeTooHighException());
 	if (grade > LOWEST_GRADE)
 		throw (GradeTooLowException());
 
@@ -73,7 +73,7 @@ void	Bureaucrat::upGrade(void)
 	{
 		this->_grade--;
 		if (this->_grade < HIGHEST_GRADE)
-			throw(GradeTooHightException());
+			throw(GradeTooHighException());
 	}
 	catch(const std::exception& e)
 	{
@@ -105,12 +105,12 @@ std::ostream & operator<<(std::ostream & out, Bureaucrat const & b)
 /*                               Exception                                    */
 /* -------------------------------------------------------------------------- */
 
-const char *	Bureaucrat::GradeTooHightException::what() const throw()
- {
-	 return ("Grade too hight : you are not big brother");
- }
+const char *	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too hight : you are not big brother");
+}
 
 const char *	Bureaucrat::GradeTooLowException::what() const throw()
- {
-	 return ("Grade too low : you are an artist");
- }
+{
+	return ("Grade too low : you are an artist");
+}

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 22:05:20 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/23 00:04:10 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/23 12:20:38 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ int	main(void)
 
 
 	// grade 1 increment
-	Bureaucrat b1("Boss", 1);
+	Bureaucrat b1("Boss", 2);
+	std::cout << b1 << " : try to upGrade" << std::endl;
+	b1.upGrade();
 	std::cout << b1 << " : try to upGrade" << std::endl;
 	b1.upGrade();
 	std::cout << std::endl;
@@ -57,7 +59,5 @@ int	main(void)
 	b2.downGrade();
 
 	std::cout << std::endl;
-
-
 	return (0);
 }
