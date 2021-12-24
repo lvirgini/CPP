@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/23 19:14:18 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/24 18:37:37 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ INC_DIR	=	includes includes/Character includes/Materia
 INCLUDE	=	Bureaucrat.hpp \
 			Form.hpp \
 			ShrubberyCreationForm.hpp \
-			PresidentialPardonForm.hpp
+			PresidentialPardonForm.hpp \
+			RobotomyRequestForm.hpp
 			
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
@@ -29,7 +30,8 @@ SRC		= 	main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
 			ShrubberyCreationForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp
 
 
 OBJ_DIR =	obj/
@@ -41,7 +43,7 @@ OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 
 CC 		=	c++
 
-CFLAG 	= 	-Wall -Wextra -std=c++98 -pedantic
+CFLAG 	= 	-Wall -Wextra -Werror -std=c++98 -pedantic
 IFLAG 	=	$(foreach dir, $(INC_DIR), -I $(dir)/ )
 
 

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:50:28 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/23 19:19:06 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/24 18:30:49 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ class	RobotomyRequestForm : public Form
 		virtual ~RobotomyRequestForm(void);
 
 	// operator
-		RobotomyRequestForm &		operator=(RobotomyRequestForm const & copy);
+		RobotomyRequestForm &	operator=(RobotomyRequestForm const & copy);
 
 	// functions
-		virtual bool	RobotomyRequestForm::executeReal(Bureaucrat const & executor);
+		virtual bool	executeReal(Bureaucrat const & executor);
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 22:05:20 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/23 19:16:09 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/24 18:30:14 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <iostream>
 #include <string>
 
@@ -74,7 +75,25 @@ int	main(void)
 
 	std::cout << "try Robotomy Form : signature 72	Execution 45 : " << std::endl;
 
-	
+	Form	*robot = new RobotomyRequestForm(boss);
+	std::cout << *robot << std::endl;
+
+	std::cout << std::endl << "try with " << blue << std::endl;
+	blue.signForm(*robot);
+	blue.executeForm(*robot);
+
+	std::cout << std::endl << "try with " << medium << std::endl;
+	medium.signForm(*robot);
+	medium.executeForm(*robot);
+
+	std::cout << std::endl << "try with " << boss << std::endl;
+	boss.signForm(*robot);
+	boss.executeForm(*robot);
+
+
+	delete president;
+	delete robot;
+	delete shrub;
 
 	return (0);
 }

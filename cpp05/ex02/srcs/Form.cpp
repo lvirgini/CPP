@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 00:12:27 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/23 18:55:14 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/24 18:32:34 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Form::~Form(void)
 /*                                Operator                                    */
 /* -------------------------------------------------------------------------- */
 
-Form &		Form::operator=(Form const & copy)
+Form &			Form::operator=(Form const & copy)
 {
 	this->_isSigned = copy._isSigned;
 	return (*this);
@@ -59,12 +59,12 @@ std::string		Form::getName(void) const
 	return (this->_name);
 }
 
-int		Form::getExecutionGrade(void) const
+int				Form::getExecutionGrade(void) const
 {
 	return (this->_executionGrade);
 }
 
-int		Form::getSignedGrade(void) const
+int				Form::getSignedGrade(void) const
 {
 	return (this->_signedGrade);
 }
@@ -78,27 +78,27 @@ bool			Form::getIsSigned(void) const
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
-	bool			Form::beSigned(Bureaucrat const & b)
+bool		Form::beSigned(Bureaucrat const & b)
+{
+	if (b.getGrade() > this->_signedGrade)
+		throw(Form::GradeTooLowException());
+	if (this->_isSigned == true)
 	{
-		if (this->_isSigned == true)
-		{
-			std::cout << "form already signed" << std::endl;
-			return (false);
-		}
-		if (b.getGrade() > this->_signedGrade)
-			throw(Form::GradeTooLowException());
-		this->_isSigned = true;
-		return (true);
+		std::cout << "form already signed" << std::endl;
+		return (false);
 	}
+	this->_isSigned = true;
+	return (true);
+}
 
-	void			Form::execute(Bureaucrat const & executor)
-	{
-		if (this->_isSigned == false)
-			throw (UnsignedForm());
-		if (executor.getGrade() > this->_executionGrade)
-			throw (GradeTooLowException());
-		this->executeReal(executor);
-	}
+void		Form::execute(Bureaucrat const & executor)
+{
+	if (this->_isSigned == false)
+		throw (UnsignedForm());
+	if (executor.getGrade() > this->_executionGrade)
+		throw (GradeTooLowException());
+	this->executeReal(executor);
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -123,6 +123,7 @@ const char *	Form::UnsignedForm::what() const throw()
 
 
 /* -------------------------------------------------------------------------- */
+
 std::ostream & operator<<(std::ostream & out, Form const & form)
 {
 	std::cout << "Forms : \"" << form.getName();

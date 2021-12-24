@@ -25,12 +25,6 @@ PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonFor
 	return (*this);
 }
 
-bool	PresidentialPardonForm::executeReal(Bureaucrat const & executor)
-{
-	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-	(void) executor;
-	return(true);
-}
 
 /* -------------------------------------------------------------------------- */
 /*                                 Get                                        */
@@ -40,8 +34,13 @@ bool	PresidentialPardonForm::executeReal(Bureaucrat const & executor)
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
+bool	PresidentialPardonForm::executeReal(Bureaucrat const & executor)
+{
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	(void) executor;
+	return(true);
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Exception                                    */
 /* -------------------------------------------------------------------------- */
-
-

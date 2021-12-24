@@ -1,4 +1,6 @@
 #include <RobotomyRequestForm.hpp>
+#include <cstdlib>
+#include <ctime> 
 
 /* -------------------------------------------------------------------------- */
 /*                     Constructor Destructor                                 */
@@ -33,6 +35,19 @@ RobotomyRequestForm &		RobotomyRequestForm::operator=(RobotomyRequestForm const 
 /* -------------------------------------------------------------------------- */
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
+
+bool	RobotomyRequestForm::executeReal(Bureaucrat const & executor)
+{
+	(void)executor;
+
+	srand(time(0)); 
+	if (std::rand() % 2 == 0)
+		std::cout << this->_target.getName() << " has been robotomized successfully" << std::endl;
+	else
+		std::cout  << "failed to robotomized "<< this->_target.getName() << std::endl;
+	return (true);
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                               Exception                                    */
