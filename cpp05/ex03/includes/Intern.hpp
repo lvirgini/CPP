@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 15:27:03 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/25 17:27:28 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/25 19:40:40 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ class	Intern
 		static Form	*createShrubberryForm(std::string target);
 		
 		Form	*makeForm(std::string typeForm, std::string target);
+
+		class	FormInexisting : public std::exception
+		{
+			public :
+				virtual const char *what() const throw();
+		};
 
 };
 

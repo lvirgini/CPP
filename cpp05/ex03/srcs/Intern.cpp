@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 15:27:49 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/25 17:27:05 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/25 19:44:52 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,15 @@ Form	*Intern::makeForm(std::string typeForm, std::string target)
 	for (int i = 0; i < NB_FORM; i++)
 		if (typeForm == functionForm[i].formName)
 			return (functionForm[i].f(target));
+	std::cout << typeForm << " is not a correct name of form" << std::endl;
+	throw (FormInexisting());
 	return (NULL);
 }
-
+	
+const char	*	Intern::FormInexisting::what() const throw()
+{
+	return ("Inexisting form's name");
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -82,10 +88,9 @@ Form	*Intern::makeForm(std::string typeForm, std::string target)
 ** used static functions for this.... 
 */
 
-
 const Intern::t_functionForm Intern::functionForm[NB_FORM] =
 {
-	{ "Presidential Pardon", &Intern::createPresidentialForm },
-	{ "Robotomy Request", &Intern::createRobotomyForm },
-	{ "Shrubberry Creation", &Intern::createShrubberryForm},
+	{ "presidential pardon", &Intern::createPresidentialForm },
+	{ "robotomy request", &Intern::createRobotomyForm },
+	{ "shrubberry creation", &Intern::createShrubberryForm},
 };
