@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:50:23 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/23 18:58:36 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/25 16:14:58 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 class	ShrubberyCreationForm : public Form
 {
 	private:
-		Bureaucrat const & _target;
+		std::string _target;
 
 	public:
 
 	// constructor
-		ShrubberyCreationForm(Bureaucrat const & target);
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const & copy);
 
 	// destructor
