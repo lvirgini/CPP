@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/24 18:37:37 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/25 21:02:20 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 
 NAME 	=	a.out
 
-INC_DIR	=	includes includes/Character includes/Materia
+INC_DIR	=	includes
 INCLUDE	=	Bureaucrat.hpp \
 			Form.hpp \
 			ShrubberyCreationForm.hpp \
