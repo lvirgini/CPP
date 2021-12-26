@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/25 21:02:34 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/26 15:43:42 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,19 @@
 NAME 	=	a.out
 
 INC_DIR	=	includes
-INCLUDE	=	Bureaucrat.hpp
+INCLUDE	=	A.hpp \
+			B.hpp \
+			C.hpp \
+			Base.hpp
 			
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
 SRC_DIR	=	srcs
 SRC		= 	main.cpp \
-			Bureaucrat.cpp
+			A.cpp \
+			B.cpp \
+			C.cpp \
+			Base.cpp
 
 OBJ_DIR =	obj/
 OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
