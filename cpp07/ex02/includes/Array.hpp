@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:11:48 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/27 19:17:06 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 22:44:50 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class Array
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-		Array(void)
+		Array(void) : tabSize(0)
 		{
-			this->tab = new T[0];
+			this->tab = NULL;
 		};
 
 		Array(unsigned int n)
@@ -64,6 +64,11 @@ class Array
 			{
 				delete [] this->tab;
 				this->tabSize = copy.getSize();
+				if (this->tabSize == 0)
+				{
+					this->tab = NULL;
+					return (*this);
+				}
 				this->tab = new T[this->tabSize];
 				for (unsigned int i = 0; i < tabSize; i++)
 					this->tab[i] = copy.tab[i];	
@@ -73,7 +78,7 @@ class Array
 		
 		T & 	operator[](int index)
 		{
-			if (index < 0 || index >= static_cast<int>(this->tabSize))
+			if (index < 0 || index >= static_cast<int>(this->tabSize) || this->tab == NULL)
 				throw(limitsOverflow());
 			return (this->tab[index]);
 		}
@@ -100,7 +105,6 @@ class Array
 				};
 		};
 
-	// functions
 
 };
 

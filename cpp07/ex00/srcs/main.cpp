@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:42:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/26 18:31:19 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 21:55:07 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(void)
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl << std::endl;
+	
 /* -------------------------------------------------------------------------- */
 	
 	std::string c = "chaine1";

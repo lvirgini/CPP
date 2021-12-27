@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:22:45 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/27 18:58:00 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 22:45:57 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@
 #define MAX_VAL 7
 int main(int, char**)
 {
-
-    int  *a = new int();
-    std::cout << *a << std::endl;
-    delete a;
-
     Array<int>   numbers(MAX_VAL);
     int*        mirror = new int[MAX_VAL];
 
@@ -77,5 +72,18 @@ int main(int, char**)
     delete [] mirror;
 
 
+    Array<int>   empty;
+
+    try
+    {
+        std::cout << empty.size() << std::endl;
+        std::cout << empty[0] << std::endl;
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     return 0;
 }
