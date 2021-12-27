@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 15:29:14 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/26 15:57:10 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 12:31:47 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void identify(Base& p)
 /* -------------------------------------------------- */
 	try
 	{
-		dynamic_cast<A &>(p);
+		A a = dynamic_cast<A &>(p);
 		std::cout << "class is A" << std::endl;
 		return ;
 	}
@@ -64,7 +64,7 @@ void identify(Base& p)
 
 	try
 	{
-		dynamic_cast<B &>(p);
+		 B b = dynamic_cast<B &>(p);
 		std::cout << "class is B" << std::endl;
 		return ;
 	}
@@ -77,7 +77,7 @@ void identify(Base& p)
 
 	try
 	{
-		dynamic_cast<C &>(p);
+		C c = dynamic_cast<C &>(p);
 		std::cout << "class is C" << std::endl;
 		return ;
 	}
