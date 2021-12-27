@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/26 15:43:42 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/12/27 13:23:58 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,20 +17,14 @@
 NAME 	=	a.out
 
 INC_DIR	=	includes
-INCLUDE	=	A.hpp \
-			B.hpp \
-			C.hpp \
-			Base.hpp
+INCLUDE	=	Array.hpp
 			
 HEADERS =	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp) )
 
 SRC_DIR	=	srcs
 SRC		= 	main.cpp \
-			A.cpp \
-			B.cpp \
-			C.cpp \
-			Base.cpp
-
+			Array.cpp
+			
 OBJ_DIR =	obj/
 OBJ 	=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 
