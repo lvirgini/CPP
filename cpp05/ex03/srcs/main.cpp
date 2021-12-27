@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 22:05:20 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/25 19:46:26 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 11:41:09 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	main(void)
 	Form* shrub = NULL;
 	Form* president = NULL;
 	Form* robot = NULL;
-
-
 
 	Bureaucrat medium("medium", 40);
 	Bureaucrat blue("blue", 150);

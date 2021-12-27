@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 22:05:20 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/23 16:41:32 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 11:34:46 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void)
 
 	try
 	{
-		Form	f1("lowtLevel", 5, 300);
+		Form	f1("lowLevel", 5, 300);
 	}
 	catch(const std::exception& e)
 	{
@@ -90,40 +90,6 @@ int	main(void)
 
 	std::cout << sep << std::endl;
 /* -------------------------------------------------------------------------- */
-
-
-
-
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-	
-
-	// Form 
-
-
-
-	// Form	f1("selling entreprise", 1, 5);
-	
-	// std::cout << f1 << std::endl;
-
-	// // try to grade 1 increment
-	// Bureaucrat b1("Boss", 1);
-	// std::cout << b1 << " : try to upGrade" << std::endl;
-	// b1.upGrade();
-	// std::cout << std::endl;
-
-
-	// // grade 150 decrement
-	// Bureaucrat b2("Bleu", 149);
-	// std::cout << b2 << " : try to downGrade" << std::endl;
-	// b2.downGrade();
-	// std::cout << b2 << " : try to downGrade" << std::endl;
-	// b2.downGrade();
-
-	// std::cout << std::endl;
-
 
 	return (0);
 }
