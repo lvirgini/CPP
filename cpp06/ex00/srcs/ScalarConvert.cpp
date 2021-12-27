@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 14:35:59 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/27 12:30:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/27 18:28:30 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ ScalarConvert &		ScalarConvert::operator=(ScalarConvert const & copy)
 	
 int		ScalarConvert::foundType(void) 
 {
-	if (isdigit(*this->s.data()))
+	if (isdigit(*this->s.data()) 
+	|| (*this->s.data() == '-' && isdigit(*(this->s.data() + 1))))
 	{
 		if (this->s.find('.') != this->s.npos)
 			return (IS_DOUBLE);
@@ -97,7 +98,14 @@ void	ScalarConvert::printChar(void) const
 	char	c = this->convertChar();
 
 	if (this->type == IS_NAN)
+	{
+		if (this->s.length() == 1)
+			c = static_cast<char>(*this->s.data());
+		if (isprint(c))
+			std::cout << "char:	" << c << std::endl;
+		else
 		std::cout << "char:	impossible" << std::endl;
+	}
 	else if (isprint(c) == false)
 		std::cout << "char:	Non displayable" << std::endl;
 	else
