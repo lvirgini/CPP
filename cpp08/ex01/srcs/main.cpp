@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:10:02 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 15:20:37 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:16:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,28 @@
 #include <cstdlib>
 #include <list>
 
-#define NUMBER	10
+#define NUMBER	1000
 int main(void)
 {
-	Span	test(3);
-	Span	spanTab(NUMBER);
+
+	std::cout << "Testing like the main" << std::endl;
+	Span sp = Span(5);
+
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+
+
+
+
+
+	std::cout << "testing with random number and addNumber with iterators " << std::endl;
+	Span	spanTab = Span(NUMBER);
 
 	std::list<int> tab;
 
@@ -33,29 +50,21 @@ int main(void)
 	std::cout << tab.size() << std::endl;
 
 	spanTab.addNumber(tab.begin(), tab.end());
-	spanTab.dipslay();
+	//spanTab.display();
+	std::cout << spanTab.shortestSpan() << std::endl;
+	std::cout << spanTab.longestSpan() << std::endl << std::endl;
 
-	/*try
+
+	std::cout << "testing add more number than span can have " << std::endl;
+
+	try
 	{
 		spanTab.addNumber(tab.begin(), tab.end());
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	
-
-	try
-	{
-		test.addNumber(2);
-		test.addNumber(4);
-		test.addNumber(-10);
-	//	test.shortestSpan();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-*/
-		return (0);
-	}
+	return (0);
+}

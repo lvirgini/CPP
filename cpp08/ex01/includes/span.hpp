@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 15:46:59 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:11:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <exception>
 #include <list>
+
 class	Span
 {
 	private:
@@ -24,27 +25,22 @@ class	Span
 
 	public:
 
+
+/*                     Constructor Destructor                                 */
+/* -------------------------------------------------------------------------- */
+
 		Span(unsigned int n);
 		Span(Span const & copy);
 		~Span(void);
 
+/*                                Operator                                    */
+/* -------------------------------------------------------------------------- */
+
 		Span &	operator=(Span const & copy);
-		int		operator[](unsigned int index) const
-		{
-			if ( index >= this->_numberAdded || !this->tab)
-				throw(SpanIndexOutOfRange());
-			return (this->tab[index]);
-		}
 
 
-/*
-		template < typename T>
-		void	addNumber(typename T::iterator it, typename T::iterator ite)
-		{
-			for (; it != ite; it++)
-				this->addNumber(*it);
-		}
-*/
+/*                               Functions                                    */
+/* -------------------------------------------------------------------------- */
 		template <typename Iterator>
 		void	addNumber(Iterator it, Iterator ite)
 		{
@@ -53,9 +49,12 @@ class	Span
 		}
 		void	addNumber(int to_add);
 		int		shortestSpan(void) const ;
-//		int		longestSpan(void) const ;
-		void	displayTab(void);
+		int		longestSpan(void) const ;
+		void	display(void) const ;
 
+
+/*                               Exception                                    */
+/* -------------------------------------------------------------------------- */
 
 		class	SpanIsFull : public std::exception
 		{
