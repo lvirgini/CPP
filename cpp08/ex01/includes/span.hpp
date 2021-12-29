@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 18:15:02 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:28:46 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ class	Span
 		unsigned int	_maxSize;
 		std::list<int>	_tab;
 
-	public:
+		Span(void);
 
+		void	checkSpan(void) const;
+
+	public:
 
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
@@ -40,6 +43,7 @@ class	Span
 
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
+
 		template <typename Iterator>
 		void	addNumber(Iterator it, Iterator ite)
 		{

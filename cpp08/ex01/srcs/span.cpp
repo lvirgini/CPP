@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 18:17:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:27:42 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	Span::addNumber(int to_add)
 void	Span::display(void) const
 {
 
-	std::list<int>::iterator it = this->_tab.begin();
-	std::list<int>::iterator ite = this->_tab.end();
+	std::list<int>::const_iterator it = this->_tab.begin();
+	std::list<int>::const_iterator ite = this->_tab.end();
 
 	for (;it != ite; it++)
 		std::cout << *it << " ";
@@ -68,21 +68,26 @@ void	Span::display(void) const
 
 /* -------------------------------------------------------------------------- */
 
+void	Span::checkSpan(void) const
+{
+	if (this->_tab.empty())
+		throw (SpanIsEmpty());
+	if (this->_tab.size() < 2)
+		throw(SpanNotEnoughNumber());
+}
+
 int		Span::shortestSpan(void) const
 {
 	int				actualSpan;
 	int				shortSpan = 0;
 
-	if (_tab.empty())
-		throw (SpanIsEmpty());
-	if (this->_numberAdded < 2)
-		throw(SpanNotEnoughNumber());
+	this->checkSpan();
 	
-	std::list<int>::iterator it_next = this->_tab.begin();
-	std::list<int>::iterator ite = this->_tab.end();
+	std::list<int>::const_iterator it_next = this->_tab.begin();
+	std::list<int>::const_iterator ite = this->_tab.end();
 
 	it_next++;
-	for ( it = this->_tab.begin(); it_next != ite; it++)
+	for (std::list<int>::const_iterator it = this->_tab.begin(); it_next != ite; it++)
 	{
 		actualSpan =  *it_next - *it;
 		if (shortSpan == 0 || actualSpan < shortSpan)
@@ -96,13 +101,10 @@ int		Span::shortestSpan(void) const
 
 int		Span::longestSpan(void) const
 {
-	if (_tab.empty())
-		throw (SpanIsEmpty());
-	if (this->_numberAdded < 2)
-		throw(SpanNotEnoughNumber());
+	this->checkSpan();
 	
-	std::list<int>::iterator it = this->_tab.begin();
-	std::list<int>::iterator ite = this->_tab.end();
+	std::list<int>::const_iterator it = this->_tab.begin();
+	std::list<int>::const_iterator ite = this->_tab.end();
 
 	ite--;
 	return (*ite - *it);
