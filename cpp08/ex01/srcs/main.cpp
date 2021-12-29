@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:10:02 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 16:25:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:33:15 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <list>
 
 #define NUMBER	1000
+
 int main(void)
 {
 
@@ -62,8 +63,51 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
+		std::cerr << e.what() << std::endl << std::endl;
+	}
+
+/* -------------------------------------------------------------------------- */
+	std::cout << "testing shortest and longest with Span empty or with one value " << std::endl;
+
+	Span	empty(5);
+	try
+	{
+		empty.shortestSpan();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		empty.longestSpan();
+	}
+	catch(const std::exception& e)
+	{
 		std::cerr << e.what() << std::endl;
 	}
 	
+/* -------------------------------------------------------------------------- */
+
+	empty.addNumber(5);
+	try
+	{
+		empty.shortestSpan();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		empty.longestSpan();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
 	return (0);
 }

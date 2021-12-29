@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 18:28:46 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:32:57 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ class	Span
 		class SpanNotEnoughNumber: public std::exception
 		{
 			public:
-				const char *what() const throw() {return "not found"; }
+				const char *what() const throw() {return "Span have only one integer, not enough to compare"; }
 		};
 
 };
