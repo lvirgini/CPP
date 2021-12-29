@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 22:59:18 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 09:03:45 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 20:59:15 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(void)
 
 	for (int i = 0; i < 10; i++)
 		tab.push_back(i);
-
 
 	try
 	{

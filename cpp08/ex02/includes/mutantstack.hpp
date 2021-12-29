@@ -17,39 +17,53 @@
 # include <stack>
 #include <iterator>
 
-template < class T>
+template < typename T>
 class	MutantStack : public std::stack<T>
 {
 	private:
 	public:
 
+		typedef typename std::stack<T>::container_type::iterator				iterator;
+		typedef typename std::stack<T>::container_type::reverse_iterator	 	reverse_iterator;
+
+
+		iterator			begin(void) ;
+		reverse_iterator	rbegin(void) ;
+		
+		iterator			end(void) ;
+		reverse_iterator	rend(void) ;
+
+};
+
+
 /*                               Functions                                    */
 /* -------------------------------------------------------------------------- */
 
 
-	/*	class iterator : public std::iterator<T>
-		{
-			public:
-				iterator : std::iterator();
-				~iterator : std::iterator();
-			};
-			
-			iterator : std::iterator::iterator : std::iterator()
-			{}
-			
-			iterator : std::iterator::~iterator : std::iterator()
-			{}
-		};
-*/
-		MutantStack<T>::iterator begin(void) const
-		{
-			return (this->pop())
-		}
+template < typename T>
+typename MutantStack<T>::iterator 			MutantStack<T>::begin(void)
+{
+	return (this->c.begin());
+}
 
-		MutantStack<T>::iterator end(void) const
-		{
-			return (this->pop() + this->size());
-		}
-};
+template < typename T>
+typename MutantStack<T>::reverse_iterator	MutantStack<T>::rbegin(void)
+{
+	return (this->c.rbegin());
+}
+
+/* -------------------------------------------------------------------------- */
+
+template < typename T>
+typename MutantStack<T>::iterator			MutantStack<T>::end(void)
+{
+	return (this->c.end());
+}
+
+template < typename T>
+typename MutantStack<T>::reverse_iterator	MutantStack<T>::rend(void)
+{
+	return (this->c.rend());
+}
 
 #endif

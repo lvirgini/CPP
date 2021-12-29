@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:10:02 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 18:33:15 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 21:29:55 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 int main(void)
 {
 
-	std::cout << "Testing like the main" << std::endl;
+	std::cout << "TESTING: like the main" << std::endl;
 	Span sp = Span(5);
 
 	sp.addNumber(5);
@@ -36,8 +36,20 @@ int main(void)
 
 
 /* -------------------------------------------------------------------------- */
+	std::cout << "TESTING: with 2 numbers INT MAX and INT MIN" << std::endl;
 
-	std::cout << "testing with random number and addNumber with iterators " << std::endl;
+	Span sp2(2);
+
+	sp2.addNumber(2147483647);
+	sp2.addNumber(-2147483648);
+
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl << std::endl;
+
+
+/* -------------------------------------------------------------------------- */
+
+	std::cout << "TESTING: with random number and addNumber with iterators " << std::endl;
 	Span	spanTab = Span(NUMBER);
 
 	std::list<int> tab;
@@ -49,13 +61,17 @@ int main(void)
 	std::cout << " tab size = " << tab.size() << std::endl;
 
 	spanTab.addNumber(tab.begin(), tab.end());
+	{
+		Span	destroy(spanTab);
+		destroy = spanTab;
+	}
 	//spanTab.display();
 	std::cout << spanTab.shortestSpan() << std::endl;
 	std::cout << spanTab.longestSpan() << std::endl << std::endl;
 
 /* -------------------------------------------------------------------------- */
 
-	std::cout << "testing add more number than span can have " << std::endl;
+	std::cout << "TESTING: add more number than span can have " << std::endl;
 
 	try
 	{
@@ -67,7 +83,7 @@ int main(void)
 	}
 
 /* -------------------------------------------------------------------------- */
-	std::cout << "testing shortest and longest with Span empty or with one value " << std::endl;
+	std::cout << "TESTING: shortest and longest with Span empty or with one value " << std::endl;
 
 	Span	empty(5);
 	try

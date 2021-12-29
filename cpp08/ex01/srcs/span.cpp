@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 18:27:42 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 21:39:55 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
+Span::Span(void)
+{}
+
 Span::Span(unsigned int n) : _maxSize(n), _tab()
 {}
+
 /* -------------------------------------------------------------------------- */
 
 Span::Span(Span const & copy) 
@@ -76,10 +80,12 @@ void	Span::checkSpan(void) const
 		throw(SpanNotEnoughNumber());
 }
 
-int		Span::shortestSpan(void) const
+/* -------------------------------------------------------------------------- */
+
+long int		Span::shortestSpan(void) const
 {
-	int				actualSpan;
-	int				shortSpan = 0;
+	long int				actualSpan;
+	long int				shortSpan = __LONG_MAX__;
 
 	this->checkSpan();
 	
@@ -89,8 +95,8 @@ int		Span::shortestSpan(void) const
 	it_next++;
 	for (std::list<int>::const_iterator it = this->_tab.begin(); it_next != ite; it++)
 	{
-		actualSpan =  *it_next - *it;
-		if (shortSpan == 0 || actualSpan < shortSpan)
+		actualSpan =  static_cast<long int>(*it_next) - static_cast<long int>(*it);
+		if (actualSpan < shortSpan)
 			shortSpan = actualSpan;
 		it_next++;
 	}
@@ -99,13 +105,13 @@ int		Span::shortestSpan(void) const
 
 /* -------------------------------------------------------------------------- */
 
-int		Span::longestSpan(void) const
+long int		Span::longestSpan(void) const
 {
 	this->checkSpan();
 	
 	std::list<int>::const_iterator it = this->_tab.begin();
 	std::list<int>::const_iterator ite = this->_tab.end();
-
+	
 	ite--;
-	return (*ite - *it);
+	return (static_cast<long int>(*ite) - static_cast<long int>(*it));
 }

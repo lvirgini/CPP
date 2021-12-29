@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 18:32:57 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 21:37:15 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ class	Span
 			for (; it != ite; it++)
 				this->addNumber(*it);
 		}
-		void	addNumber(int to_add);
-		int		shortestSpan(void) const ;
-		int		longestSpan(void) const ;
-		void	display(void) const ;
+		void		addNumber(int to_add);
+		long int	shortestSpan(void) const ;
+		long int	longestSpan(void) const ;
+		void		display(void) const ;
 
 
 /*                               Exception                                    */
