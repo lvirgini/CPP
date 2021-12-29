@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 16:16:32 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:22:13 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 Span::Span(unsigned int n) : _len(n), _numberAdded(0)
 {
 	this->tab = new int[n];
-	this->_len = n;
-	this->_numberAdded = 0;
 }
 /* -------------------------------------------------------------------------- */
 
@@ -40,7 +38,7 @@ Span & Span::operator=(Span const & copy)
 			delete [] this->tab;
 		this->_len = copy._len;
 		this->_numberAdded = copy._numberAdded;
-		this->tab = new int(this->_len);
+		this->tab = new int[this->_len];
 		for (unsigned int i = 0; i < this->_len; i++)
 			this->tab[i] = copy.tab[i];
 	}
@@ -50,7 +48,7 @@ Span & Span::operator=(Span const & copy)
 
 Span::~Span(void)
 {
-	delete [] tab ;
+	delete [] this->tab ;
 }
 
 /* -------------------------------------------------------------------------- */

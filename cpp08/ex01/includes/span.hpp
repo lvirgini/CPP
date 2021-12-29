@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 16:11:23 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:23:45 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SPAN_HPP
 
 # include <exception>
-#include <list>
 
 class	Span
 {

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:10:02 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 16:16:01 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:25:16 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ int main(void)
 	sp.addNumber(11);
 
 	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl << std::endl;
 
 
-
-
+/* -------------------------------------------------------------------------- */
 
 	std::cout << "testing with random number and addNumber with iterators " << std::endl;
 	Span	spanTab = Span(NUMBER);
@@ -46,14 +45,14 @@ int main(void)
 	
 	for (int i = 0; i < NUMBER; i++)
 		tab.push_back(rand());
-
-	std::cout << tab.size() << std::endl;
+	std::cout << " tab size = " << tab.size() << std::endl;
 
 	spanTab.addNumber(tab.begin(), tab.end());
 	//spanTab.display();
 	std::cout << spanTab.shortestSpan() << std::endl;
 	std::cout << spanTab.longestSpan() << std::endl << std::endl;
 
+/* -------------------------------------------------------------------------- */
 
 	std::cout << "testing add more number than span can have " << std::endl;
 
