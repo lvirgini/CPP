@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/28 18:10:15 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:15:48 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-Span::Span(unsigned int n)
+Span::Span(unsigned int n) : len(len), numberAdded(0)
 {
 	this->tab = new int[n];
 	this->len = n;
 	this->numberAdded = 0;
 }
 
-Span::Span(Span const & copy)
+Span::Span(Span const & copy) 
 {
 	*this = copy;
 }
@@ -47,7 +47,7 @@ Span & Span::operator=(Span const & copy )
 
 Span::~Span(void)
 {
-	delete tab ;
+	delete [] tab ;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -63,6 +63,7 @@ void	Span::addNumber(int to_add)
 	this->numberAdded += 1;;
 }
 
+// Add number avec (it.begin, it.end )
 
 int		Span::shortestSpan(void) const
 {
