@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 15:46:53 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 15:48:19 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Span::Span(unsigned int n) : _len(n), _numberAdded(0)
 	this->_numberAdded = 0;
 }
 
-Span::Span(Span const & copy)
+Span::Span(Span const & copy) 
 {
 	*this = copy;
 }
@@ -70,6 +70,7 @@ void	Span::displayTab(void)
 	std::cout << std::endl;
 }
 
+// Add number avec (it.begin, it.end )
 
 
 int		Span::shortestSpan(void) const

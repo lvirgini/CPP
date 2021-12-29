@@ -6,11 +6,12 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 22:59:18 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/28 14:10:07 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:03:45 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+#include <iostream>
 #include <algorithm> 
 #include <list>
 

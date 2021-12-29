@@ -6,14 +6,14 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 22:51:26 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 13:57:10 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 15:48:31 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
-# include <iostream>
+# include <exception>
 # include <algorithm> 
 
 
