@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 22:51:26 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/28 14:09:43 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 13:57:10 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typename T::iterator	easyfind(T & t, int i)
 	
 	it = std::find(t.begin(), t.end(), i);
 	if (it == t.end())
-		throw(std::range_error("easyfind not found "));
+		throw(SpanIsNotFound());
 	return (it);
 }
 

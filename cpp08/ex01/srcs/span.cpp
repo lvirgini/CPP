@@ -6,23 +6,23 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/28 18:10:15 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 15:46:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 #include <iostream>
-#include <set>
+#include <list>
 
 /* -------------------------------------------------------------------------- */
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-Span::Span(unsigned int n)
+Span::Span(unsigned int n) : _len(n), _numberAdded(0)
 {
 	this->tab = new int[n];
-	this->len = n;
-	this->numberAdded = 0;
+	this->_len = n;
+	this->_numberAdded = 0;
 }
 
 Span::Span(Span const & copy)
@@ -30,16 +30,16 @@ Span::Span(Span const & copy)
 	*this = copy;
 }
 
-Span & Span::operator=(Span const & copy )
+Span & Span::operator=(Span const & copy)
 {
 	if (this != &copy)
 	{
 		if (this->tab)
-			delete this->tab;
-		this->len = copy.len;
-		this->numberAdded = copy.numberAdded;
-		this->tab = new int(this->len);
-		for (unsigned int i = 0; i < this->len; i++)
+			delete [] this->tab;
+		this->_len = copy._len;
+		this->_numberAdded = copy._numberAdded;
+		this->tab = new int(this->_len);
+		for (unsigned int i = 0; i < this->_len; i++)
 			this->tab[i] = copy.tab[i];
 	}
 	return *this;
@@ -47,7 +47,7 @@ Span & Span::operator=(Span const & copy )
 
 Span::~Span(void)
 {
-	delete tab ;
+	delete [] tab ;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -56,20 +56,42 @@ Span::~Span(void)
 
 void	Span::addNumber(int to_add)
 {
-	std::cout << this->numberAdded << " " << this->len << std::endl;
-	if (this->numberAdded >= this->len)
-		throw (tabIsFull());
-	this->tab[this->numberAdded] = to_add;
-	this->numberAdded += 1;;
+	std::cout << this->_numberAdded << " " << this->_len << std::endl;
+	if (this->_numberAdded >= this->_len)
+		throw (SpanIsFull());
+	this->tab[this->_numberAdded] = to_add;
+	this->_numberAdded += 1;;
 }
+
+void	Span::displayTab(void)
+{
+	for (unsigned int i = 0; i < this->_numberAdded; i++)
+		std::cout << this->tab[i] << " ";
+	std::cout << std::endl;
+}
+
 
 
 int		Span::shortestSpan(void) const
 {
-	std::set<int> setTab (this->tab, this->tab + this->numberAdded);
-	int *r = setTab.lower_bound();
-	std::cout << *i << std::endl;
-	return (1);
-	//int res = 
-	//std::cout << "lower = " << 
+	std::list<int>	listTab(this->tab, this->tab + this->_len);
+	int				actualSpan;
+	int				shortSpan = 0;
+/*
+	for (unsigned int i = 0; i < this->_len; i++)
+		listTab.push_back(this->tab[i]);*/
+
+	listTab.unique();
+	listTab.sort();
+
+	std::list<int>::iterator it = listTab.begin();
+	std::list<int>::iterator ite = listTab.end();
+
+	for (; it != ite; it++)
+	{
+		actualSpan = *ite - *it;
+		if (shortSpan == 0 || actualSpan < shortSpan)
+			shortSpan = actualSpan;
+	}
+	return (shortSpan);
 }
