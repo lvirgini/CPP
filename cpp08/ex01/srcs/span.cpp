@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:55:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 16:22:13 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:17:16 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@
 /*                     Constructor Destructor                                 */
 /* -------------------------------------------------------------------------- */
 
-Span::Span(unsigned int n) : _len(n), _numberAdded(0)
-{
-	this->tab = new int[n];
-}
+Span::Span(unsigned int n) : _maxSize(n), _tab()
+{}
 /* -------------------------------------------------------------------------- */
 
 Span::Span(Span const & copy) 
@@ -34,22 +32,15 @@ Span & Span::operator=(Span const & copy)
 {
 	if (this != &copy)
 	{
-		if (this->tab)
-			delete [] this->tab;
-		this->_len = copy._len;
-		this->_numberAdded = copy._numberAdded;
-		this->tab = new int[this->_len];
-		for (unsigned int i = 0; i < this->_len; i++)
-			this->tab[i] = copy.tab[i];
+		this->_maxSize = copy._maxSize;
+		this->_tab.assign(copy._tab.begin(), copy._tab.end());
 	}
 	return *this;
 }
 /* -------------------------------------------------------------------------- */
 
 Span::~Span(void)
-{
-	delete [] this->tab ;
-}
+{}
 
 /* -------------------------------------------------------------------------- */
 /*                               Functions                                    */
@@ -57,17 +48,21 @@ Span::~Span(void)
 
 void	Span::addNumber(int to_add)
 {
-	if (this->_numberAdded >= this->_len)
+	if (this->_tab.size() >= this->_maxSize)
 		throw (SpanIsFull());
-	this->tab[this->_numberAdded] = to_add;
-	this->_numberAdded += 1;;
+	this->_tab.push_back(to_add);
+	this->_tab.sort();
 }
 /* -------------------------------------------------------------------------- */
 
 void	Span::display(void) const
 {
-	for (unsigned int i = 0; i < this->_numberAdded; i++)
-		std::cout << this->tab[i] << " ";
+
+	std::list<int>::iterator it = this->_tab.begin();
+	std::list<int>::iterator ite = this->_tab.end();
+
+	for (;it != ite; it++)
+		std::cout << *it << " ";
 	std::cout << std::endl;
 }
 
@@ -75,18 +70,19 @@ void	Span::display(void) const
 
 int		Span::shortestSpan(void) const
 {
-	std::list<int>	listTab(this->tab, this->tab + this->_len);
 	int				actualSpan;
 	int				shortSpan = 0;
 
-	listTab.sort();
-
-	std::list<int>::iterator it = listTab.begin();
-	std::list<int>::iterator it_next = listTab.begin();
-	std::list<int>::iterator ite = listTab.end();
+	if (_tab.empty())
+		throw (SpanIsEmpty());
+	if (this->_numberAdded < 2)
+		throw(SpanNotEnoughNumber());
+	
+	std::list<int>::iterator it_next = this->_tab.begin();
+	std::list<int>::iterator ite = this->_tab.end();
 
 	it_next++;
-	for (; it_next != ite; it++)
+	for ( it = this->_tab.begin(); it_next != ite; it++)
 	{
 		actualSpan =  *it_next - *it;
 		if (shortSpan == 0 || actualSpan < shortSpan)
@@ -100,12 +96,13 @@ int		Span::shortestSpan(void) const
 
 int		Span::longestSpan(void) const
 {
-	std::list<int>	listTab(this->tab, this->tab + this->_len);
-
-	listTab.sort();
-
-	std::list<int>::iterator it = listTab.begin();
-	std::list<int>::iterator ite = listTab.end();
+	if (_tab.empty())
+		throw (SpanIsEmpty());
+	if (this->_numberAdded < 2)
+		throw(SpanNotEnoughNumber());
+	
+	std::list<int>::iterator it = this->_tab.begin();
+	std::list<int>::iterator ite = this->_tab.end();
 
 	ite--;
 	return (*ite - *it);

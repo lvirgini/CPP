@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 16:23:45 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:15:02 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define SPAN_HPP
 
 # include <exception>
+#include <list>
 
 class	Span
 {
 	private:
-		int				*tab;
-		unsigned int	_len;
-		unsigned int	_numberAdded;
+		unsigned int	_maxSize;
+		std::list<int>	_tab;
 
 	public:
 
@@ -61,19 +61,24 @@ class	Span
 				const char * what() const throw() { return "tab is full, cannot add another Span";}
 		};
 
+		class	SpanIsEmpty : public std::exception
+		{
+			public:
+				const char * what() const throw() { return "tab is empty, cannot add another Span";}
+		};
+
 		class SpanIsNotFound : public std::exception
 		{
 			public:
 				const char *what() const throw() {return "not found"; }
 		};
 
-		class SpanIndexOutOfRange : public std::exception
+		class SpanNotEnoughNumber: public std::exception
 		{
 			public:
 				const char *what() const throw() {return "not found"; }
 		};
 
 };
-
 
 #endif
