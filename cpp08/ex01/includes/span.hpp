@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:45:09 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 21:37:15 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/30 11:29:47 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SPAN_HPP
 
 # include <exception>
-#include <list>
+# include <list>
 
 class	Span
 {
@@ -80,7 +80,7 @@ class	Span
 		class SpanNotEnoughNumber: public std::exception
 		{
 			public:
-				const char *what() const throw() {return "Span have only one integer, not enough to compare"; }
+				const char *what() const throw() {return "Span have only one integer, nothing to compare"; }
 		};
 
 };

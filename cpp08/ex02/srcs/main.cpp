@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 16:32:37 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 23:06:59 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/30 11:33:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int main()
 /* -------------------------------------------------------------------------- */
 	{
 
-		std::cout << std::endl << "test iterator with <list>" << std::endl;
+		std::cout << std::endl << "test iterator with <float>" << std::endl;
 		MutantStack<float> fStack;
 
 		fStack.push( 1.11f);
@@ -134,7 +134,7 @@ int main()
 			++it;
 		}
 		
-		std::cout << std::endl << "test reverse iterator with string" << std::endl;
+		std::cout << std::endl << "test reverse iterator with <float>" << std::endl;
 		
 		MutantStack<float>::reverse_iterator rit = fStack.rbegin();
 		MutantStack<float>::reverse_iterator rite = fStack.rend();

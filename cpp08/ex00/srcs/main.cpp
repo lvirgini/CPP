@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 22:59:18 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/12/29 20:59:15 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/12/30 11:21:42 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << " " << 2 << std::endl;
 	}
 
 
@@ -40,7 +40,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << 222 << '\n';
+		std::cerr << e.what() << " " << 222 << std::endl;
 	}
 
 	return (0);
